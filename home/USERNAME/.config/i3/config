@@ -1,0 +1,343 @@
+#vim: filetype=i3
+set $mod Mod4
+
+font pango:Noto Sans 10
+
+floating_modifier $mod
+
+#workspace names
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
+
+set $bg-color 	         #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                 indicator
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+# gaps
+gaps outer 5
+gaps inner 15
+
+# floating windows
+for_window [class="Enpass-Desktop"] floating enable
+for_window [class="Impactor"] floating enable
+for_window [class="Alsa-tray"] floating enable
+for_window [class="Mainwindow.py"] floating enable
+
+for_window [class="^.*"] border pixel 4
+
+#--------------------------------------------------------------------------------------------------#
+#--------------------AUTOSTART---------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------#
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id nm-applet
+exec --no-startup-id pamac-tray
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id compton -cCFb --backend glx --vsync opengl
+exec --no-startup-id setxkbmap eu -option caps:escape
+exec --no-startup-id Scripts/enpass.sh
+exec --no-startup-id unclutter --timeout 3
+exec --no-startup-id xset r rate 300 60 
+
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+#exec_always --no-startup-id ~/Scripts/panel.sh
+
+#--------------------------------------------------------------------------------------------------#
+#--------------------MODES-------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------#
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Shift+j resize shrink width 1 px or 1 ppt
+        bindsym Shift+k resize grow height 1 px or 1 ppt
+        bindsym Shift+l resize shrink height 1 px or 1 ppt
+        bindsym Shift+semicolon resize grow width 1 px or 1 ppt
+
+        bindsym Shift+Left resize shrink width 1 px or 1 ppt
+        bindsym Shift+Down resize grow height 1 px or 1 ppt
+        bindsym Shift+Up resize shrink height 1 px or 1 ppt
+        bindsym Shift+Right resize grow width 1 px or 1 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+#--------------------------------------------------------------------------------------------------#
+#--------------------KEYBINDINGS-------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------#
+
+#--------------------NUMBER KEYS-------------------------------------------------------------------#
+bindsym $mod+1				workspace $workspace1
+bindsym $mod+Shift+1			move container to workspace $workspace1
+
+bindsym $mod+2				workspace $workspace2
+bindsym $mod+Shift+2			move container to workspace $workspace2
+
+bindsym $mod+3				workspace $workspace3
+bindsym $mod+Shift+3			move container to workspace $workspace3
+
+bindsym $mod+4				workspace $workspace4
+bindsym $mod+Shift+4			move container to workspace $workspace4
+
+bindsym $mod+5				workspace $workspace5
+bindsym $mod+Shift+5			move container to workspace $workspace5
+
+bindsym $mod+6				workspace $workspace6
+bindsym $mod+Shift+6			move container to workspace $workspace6
+
+bindsym $mod+7				workspace $workspace7
+bindsym $mod+Shift+7			move container to workspace $workspace7
+
+bindsym $mod+8				workspace $workspace8
+bindsym $mod+Shift+8			move container to workspace $workspace8
+
+bindsym $mod+9				workspace $workspace9
+bindsym $mod+Shift+9			move container to workspace $workspace9
+
+bindsym $mod+0				workspace $workspace10
+bindsym $mod+Shift+0			move container to workspace $workspace10
+
+#--------------------ARROW KEYS--------------------------------------------------------------------#
+bindsym $mod+Left			focus left
+bindsym $mod+Shift+Left			move left 100
+bindsym $mod+j				focus left
+bindsym $mod+Shift+j			move left 100
+
+bindsym $mod+Down			focus down
+bindsym $mod+Shift+Down			move down 100
+bindsym $mod+k				focus down
+bindsym $mod+Shift+k			move down 100
+
+bindsym $mod+Up				focus up
+bindsym $mod+Shift+Up			move up 100
+bindsym $mod+l				focus up
+bindsym $mod+Shift+l			move up 100
+
+bindsym $mod+Right			focus right
+bindsym $mod+Shift+Right		move right 100
+bindsym $mod+semicolon			focus right
+bindsym $mod+Shift+semicolon		move right 100
+
+#--------------------MEDIA KEYS--------------------------------------------------------------------#
+bindsym XF86AudioMute			exec --no-startup-id amixer -q set Master toggle
+bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -q set Master 10%- unmute
+bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -q set Master 10%+ unmute
+bindsym XF86AudioPrev			exec --no-startup-id playerctl previous
+bindcode 172				exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext			exec --no-startup-id playerctl next
+bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 20
+bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 20
+
+#--------------------BASIC KEYS--------------------------------------------------------------------#
+#bindsym $mod+Escape
+#bindsym $mod+Shift+Escape
+
+#bindsym $mod+BackSpace
+#bindsym $mod+Shift+BackSpace
+
+#bindsym $mod+Tab
+#bindsym $mod+Shift+Tab
+
+bindsym $mod+Return			exec urxvt
+#bindsym $mod+Shift+Return
+
+bindsym $mod+space			focus mode_toggle
+bindsym $mod+Shift+space		floating toggle
+
+#bindsym $mod+Menu
+#bindsym $mod+Shift+Menu
+
+
+#bindsym $mod+Print
+#bindsym $mod+Shift+Print
+
+#bindsym $mod+Scroll_Lock
+#bindsym $mod+Shift+Scroll_Lock
+
+#bindsym $mod+Pause
+#bindsym $mod+Shift+Pause
+
+
+#bindsym $mod+Insert
+#bindsym $mod+Shift+Insert
+
+#bindsym $mod+Home
+#bindsym $mod+Shift+Home
+
+#bindsym $mod+Prior
+#bindsym $mod+Shift+Prior
+
+#bindsym $mod+Delete
+#bindsym $mod+Shift+Delete
+
+#bindsym $mod+End
+#bindsym $mod+Shift+End
+
+#bindsym $mod+Next
+#bindsym $mod+Shift+Next
+
+#--------------------LETTER KEYS-------------------------------------------------------------------#
+bindsym $mod+q				kill
+bindsym $mod+Shift+q			kill
+
+bindsym $mod+w				layout tabbed
+#bindsym $mod+Shift+w
+
+bindsym $mod+e				exec urxvt -e ranger
+#bindsym $mod+Shift+e
+
+bindsym $mod+r				mode "resize"
+bindsym $mod+Shift+r			restart
+
+#bindsym $mod+t
+#bindsym $mod+Shift+t
+
+#bindsym $mod+y
+#bindsym $mod+Shift+y
+
+#bindsym $mod+u
+#bindsym $mod+Shift+u
+
+bindsym $mod+i				gaps inner current minus 5
+bindsym $mod+Shift+i			gaps inner current plus 5
+
+bindsym $mod+o				gaps outer current minus 5
+bindsym $mod+Shift+o			gaps outer current plus 5
+
+#bindsym $mod+p
+#bindsym $mod+Shift+p
+
+
+bindsym $mod+a				focus parent
+#bindsym $mod+Shift+a
+
+bindsym $mod+s				layout stacking
+#bindsym $mod+Shift+s
+
+bindsym $mod+d				exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -dpi 192 -font "Noto Sans 14"' --entry-type=filename
+#bindsym $mod+Shift+d
+
+bindsym $mod+f				fullscreen toggle
+#bindsym $mod+Shift+f
+
+#bindsym $mod+g
+#bindsym $mod+Shift+g
+
+bindsym $mod+h				split h
+#bindsym $mod+Shift+h
+
+
+#bindsym $mod+z
+#bindsym $mod+Shift+z
+
+#bindsym $mod+x
+bindsym $mod+Shift+x			exit
+
+#bindsym $mod+c
+#bindsym $mod+Shift+c
+
+bindsym $mod+v				split v
+#bindsym $mod+Shift+v
+
+bindsym $mod+b				exec GTK_THEME=Adwaita:light waterfox
+bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
+
+#bindsym $mod+n
+#bindsym $mod+Shift+n
+
+#bindsym $mod+m
+#bindsym $mod+Shift+m
+
+#--------------------SYMBOL KEYS-------------------------------------------------------------------#
+#bindsym $mod+grave
+#bindsym $mod+Shift+grave
+
+#bindsym $mod+minus
+#bindsym $mod+Shift+minus
+
+#bindsym $mod+equal
+#bindsym $mod+Shift+equal
+
+
+#bindsym $mod+bracketleft
+#bindsym $mod+Shift+bracketleft
+
+#bindsym $mod+bracketright
+#bindsym $mod+Shift+bracketright
+
+#bindsym $mod+backslash
+#bindsym $mod+Shift+backslash
+
+
+#bindsym $mod+apostrophe
+#bindsym $mod+Shift+apostrophe
+
+
+#bindsym $mod+comma
+#bindsym $mod+Shift+comma
+
+#bindsym $mod+period
+#bindsym $mod+Shift+period
+
+#bindsym $mod+slash
+#bindsym $mod+Shift+slash
+
+#--------------------F KEYS------------------------------------------------------------------------#
+#bindsym $mod+F1
+#bindsym $mod+Shift+F1
+
+#bindsym $mod+F2
+#bindsym $mod+Shift+F2
+
+#bindsym $mod+F3
+#bindsym $mod+Shift+F3
+
+#bindsym $mod+F4
+#bindsym $mod+Shift+F4
+
+#bindsym $mod+F5
+#bindsym $mod+Shift+F5
+
+#bindsym $mod+F6
+#bindsym $mod+Shift+F6
+
+#bindsym $mod+F7
+#bindsym $mod+Shift+F7
+
+#bindsym $mod+F8
+#bindsym $mod+Shift+F8
+
+#bindsym $mod+F9
+#bindsym $mod+Shift+F9
+
+#bindsym $mod+F10
+#bindsym $mod+Shift+F10
+
+#bindsym $mod+F11
+#bindsym $mod+Shift+F11
+
+#bindsym $mod+F12
+#bindsym $mod+Shift+F12
+
