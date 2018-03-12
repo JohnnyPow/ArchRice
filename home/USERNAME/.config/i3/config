@@ -1,9 +1,14 @@
 #vim: filetype=i3
 set $mod Mod4
+set $terminal st
 
 font pango:Noto Sans 10
 
 floating_modifier $mod
+
+#screen identifiers
+set $screen1 "HDMI-0"
+set $screen2 "HDMI-1"
 
 #workspace names
 set $workspace1 "1"
@@ -16,6 +21,18 @@ set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
 set $workspace10 "10"
+
+#bind workspaces to screens
+workspace $workspace1 output $screen1
+workspace $workspace2 output $screen1
+workspace $workspace3 output $screen1
+workspace $workspace4 output $screen1
+workspace $workspace5 output $screen1
+workspace $workspace6 output $screen2
+workspace $workspace7 output $screen2
+workspace $workspace8 output $screen2
+workspace $workspace9 output $screen2
+workspace $workspace10 output $screen2
 
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
@@ -44,7 +61,7 @@ for_window [class="^.*"] border pixel 4
 #--------------------AUTOSTART---------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------#
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id compton -cCFb --backend glx --vsync opengl
@@ -79,6 +96,26 @@ mode "resize" {
         bindsym Shift+Down resize grow height 1 px or 1 ppt
         bindsym Shift+Up resize shrink height 1 px or 1 ppt
         bindsym Shift+Right resize grow width 1 px or 1 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+set $mode_apps (W)aterfox, (S)potify
+mode "$mode_apps" {
+	bindsym w exec GTK_THEME=Adwaita:light waterfox, mode "default"
+	bindsym Shift+w exec GTK_THEME=Adwaita:light waterfox -private-window, mode "default"
+	bindsym s exec spotify --force-device-scale-factor=2, mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+set $mode_system (W)aterfox, (S)potify
+mode "$mode_system" {
+	bindsym r exec reboot, mode "default"
+	bindsym Shift+w exec GTK_THEME=Adwaita:light waterfox -private-window, mode "default"
+	bindsym s exec spotify --force-device-scale-factor=2, mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -147,8 +184,8 @@ bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -q set Master 10%+ unm
 bindsym XF86AudioPrev			exec --no-startup-id playerctl previous
 bindcode 172				exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext			exec --no-startup-id playerctl next
-bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 20
-bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 20
+bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 
 #--------------------BASIC KEYS--------------------------------------------------------------------#
 #bindsym $mod+Escape
@@ -160,7 +197,7 @@ bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 20
 #bindsym $mod+Tab
 #bindsym $mod+Shift+Tab
 
-bindsym $mod+Return			exec urxvt
+bindsym $mod+Return			exec $terminal
 #bindsym $mod+Shift+Return
 
 bindsym $mod+space			focus mode_toggle
@@ -202,11 +239,11 @@ bindsym $mod+Shift+space		floating toggle
 bindsym $mod+q				kill
 bindsym $mod+Shift+q			kill
 
-bindsym $mod+w				layout tabbed
+#bindsym $mod+w				layout tabbed
 #bindsym $mod+Shift+w
 
-bindsym $mod+e				exec urxvt -e ranger
-#bindsym $mod+Shift+e
+bindsym $mod+e				exec $terminal -e ranger
+bindsym $mod+Shift+e			exec $terminal -e sudo ranger /
 
 bindsym $mod+r				mode "resize"
 bindsym $mod+Shift+r			restart
@@ -226,14 +263,14 @@ bindsym $mod+Shift+i			gaps inner current plus 5
 bindsym $mod+o				gaps outer current minus 5
 bindsym $mod+Shift+o			gaps outer current plus 5
 
-#bindsym $mod+p
+bindsym $mod+p				exec pamac-manager
 #bindsym $mod+Shift+p
 
 
-bindsym $mod+a				focus parent
+bindsym $mod+a				mode "$mode_apps"
 #bindsym $mod+Shift+a
 
-bindsym $mod+s				layout stacking
+#bindsym $mod+s				layout stacking
 #bindsym $mod+Shift+s
 
 bindsym $mod+d				exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -dpi 192 -font "Noto Sans 14"' --entry-type=filename
@@ -252,7 +289,7 @@ bindsym $mod+h				split h
 #bindsym $mod+z
 #bindsym $mod+Shift+z
 
-#bindsym $mod+x
+bindsym $mod+x				mode "$mode_system"
 bindsym $mod+Shift+x			exit
 
 #bindsym $mod+c
