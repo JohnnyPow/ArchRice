@@ -2,13 +2,11 @@
 set $mod Mod4
 set $terminal st
 
-font pango:Noto Sans 10
-
 floating_modifier $mod
 
 #screen identifiers
-set $screen1 "HDMI-0"
-set $screen2 "HDMI-1"
+set $screen1 "eDP1"
+set $screen2 "eDP1"
 
 #workspace names
 set $workspace1 "1"
@@ -34,28 +32,31 @@ workspace $workspace8 output $screen2
 workspace $workspace9 output $screen2
 workspace $workspace10 output $screen2
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
+#window colors
+set $border-color        #000000
+set $bg-color 	         #285577
+set $inactive-bg-color   #2F343F
 set $urgent-bg-color     #E53935
+set $text-color          #000000
+set $indicator-color 	 #2E9EF4
 
-# window colors
-#                       border              background         text                 indicator
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
-# gaps
+#                        border        background         text        indicator
+client.focused          $border-color $bg-color          $text-color $indicator-color
+client.unfocused        $border-color $inactive-bg-color $text-color $inactive-bg-color
+client.focused_inactive $border-color $inactive-bg-color $text-color $inactive-bg-color
+client.urgent           $border-color $urgent-bg-color   $text-color $urgent-bg-color
+
+#gaps
 gaps outer 5
-gaps inner 15
+gaps inner 10
 
-# floating windows
+#floating windows
+for_window [class="^.*"] border pixel 4
+
 for_window [class="Enpass-Desktop"] floating enable
 for_window [class="Impactor"] floating enable
 for_window [class="Alsa-tray"] floating enable
 for_window [class="Mainwindow.py"] floating enable
-
-for_window [class="^.*"] border pixel 4
 
 #--------------------------------------------------------------------------------------------------#
 #--------------------AUTOSTART---------------------------------------------------------------------#
@@ -64,33 +65,24 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id compton -cCFb --backend glx --vsync opengl
+exec --no-startup-id compton
 exec --no-startup-id setxkbmap eu -option caps:escape
-exec --no-startup-id Scripts/enpass.sh
-exec --no-startup-id unclutter --timeout 3
+exec --no-startup-id enpass startWithTray
+exec --no-startup-id unclutter --timeout 2
 exec --no-startup-id xset r rate 300 60 
+exec --no-startup-id devmon
+exec --no-startup-id libinput-gestures-setup start
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-#exec_always --no-startup-id ~/Scripts/panel.sh
 
 #--------------------------------------------------------------------------------------------------#
 #--------------------MODES-------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------#
 mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
-
-        bindsym Shift+j resize shrink width 1 px or 1 ppt
-        bindsym Shift+k resize grow height 1 px or 1 ppt
-        bindsym Shift+l resize shrink height 1 px or 1 ppt
-        bindsym Shift+semicolon resize grow width 1 px or 1 ppt
 
         bindsym Shift+Left resize shrink width 1 px or 1 ppt
         bindsym Shift+Down resize grow height 1 px or 1 ppt
@@ -101,21 +93,12 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-set $mode_apps (W)aterfox, (S)potify
-mode "$mode_apps" {
-	bindsym w exec GTK_THEME=Adwaita:light waterfox, mode "default"
-	bindsym Shift+w exec GTK_THEME=Adwaita:light waterfox -private-window, mode "default"
-	bindsym s exec spotify --force-device-scale-factor=2, mode "default"
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-set $mode_system (W)aterfox, (S)potify
+set $mode_system (E)xit, (R)eboot, (S)hutdown, (L)ock
 mode "$mode_system" {
 	bindsym r exec reboot, mode "default"
-	bindsym Shift+w exec GTK_THEME=Adwaita:light waterfox -private-window, mode "default"
-	bindsym s exec spotify --force-device-scale-factor=2, mode "default"
+	bindsym s exec shutdown -h now, mode "default"
+	bindsym e exit, mode "default"
+	bindsym l exec i3lock -c 181818, mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -125,7 +108,7 @@ mode "$mode_system" {
 #--------------------KEYBINDINGS-------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------#
 
-#--------------------NUMBER KEYS-------------------------------------------------------------------#
+#--------------------NUMBER-KEYS-------------------------------------------------------------------#
 bindsym $mod+1				workspace $workspace1
 bindsym $mod+Shift+1			move container to workspace $workspace1
 
@@ -156,28 +139,20 @@ bindsym $mod+Shift+9			move container to workspace $workspace9
 bindsym $mod+0				workspace $workspace10
 bindsym $mod+Shift+0			move container to workspace $workspace10
 
-#--------------------ARROW KEYS--------------------------------------------------------------------#
+#--------------------ARROW-KEYS--------------------------------------------------------------------#
 bindsym $mod+Left			focus left
 bindsym $mod+Shift+Left			move left 100
-bindsym $mod+j				focus left
-bindsym $mod+Shift+j			move left 100
 
 bindsym $mod+Down			focus down
 bindsym $mod+Shift+Down			move down 100
-bindsym $mod+k				focus down
-bindsym $mod+Shift+k			move down 100
 
 bindsym $mod+Up				focus up
 bindsym $mod+Shift+Up			move up 100
-bindsym $mod+l				focus up
-bindsym $mod+Shift+l			move up 100
 
 bindsym $mod+Right			focus right
 bindsym $mod+Shift+Right		move right 100
-bindsym $mod+semicolon			focus right
-bindsym $mod+Shift+semicolon		move right 100
 
-#--------------------MEDIA KEYS--------------------------------------------------------------------#
+#--------------------MEDIA-KEYS--------------------------------------------------------------------#
 bindsym XF86AudioMute			exec --no-startup-id amixer -q set Master toggle
 bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -q set Master 10%- unmute
 bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -q set Master 10%+ unmute
@@ -185,9 +160,11 @@ bindsym XF86AudioPrev			exec --no-startup-id playerctl previous
 bindcode 172				exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext			exec --no-startup-id playerctl next
 bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
+bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
+bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
 
-#--------------------BASIC KEYS--------------------------------------------------------------------#
+#--------------------BASIC-KEYS--------------------------------------------------------------------#
 #bindsym $mod+Escape
 #bindsym $mod+Shift+Escape
 
@@ -200,8 +177,8 @@ bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 bindsym $mod+Return			exec $terminal
 #bindsym $mod+Shift+Return
 
-bindsym $mod+space			focus mode_toggle
-bindsym $mod+Shift+space		floating toggle
+#bindsym $mod+space
+#bindsym $mod+Shift+space
 
 #bindsym $mod+Menu
 #bindsym $mod+Shift+Menu
@@ -235,11 +212,11 @@ bindsym $mod+Shift+space		floating toggle
 #bindsym $mod+Next
 #bindsym $mod+Shift+Next
 
-#--------------------LETTER KEYS-------------------------------------------------------------------#
+#--------------------LETTER-KEYS-------------------------------------------------------------------#
 bindsym $mod+q				kill
 bindsym $mod+Shift+q			kill
 
-#bindsym $mod+w				layout tabbed
+#bindsym $mod+w
 #bindsym $mod+Shift+w
 
 bindsym $mod+e				exec $terminal -e ranger
@@ -267,10 +244,10 @@ bindsym $mod+p				exec pamac-manager
 #bindsym $mod+Shift+p
 
 
-bindsym $mod+a				mode "$mode_apps"
+#bindsym $mod+a
 #bindsym $mod+Shift+a
 
-#bindsym $mod+s				layout stacking
+bindsym $mod+s				exec spotify --force-device-scale-factor=2
 #bindsym $mod+Shift+s
 
 bindsym $mod+d				exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -dpi 192 -font "Noto Sans 14"' --entry-type=filename
@@ -285,12 +262,21 @@ bindsym $mod+f				fullscreen toggle
 bindsym $mod+h				split h
 #bindsym $mod+Shift+h
 
+#bindsym $mod+j
+#bindsym $mod+Shift+j
+
+#bindsym $mod+k
+#bindsym $mod+Shift+k
+
+#bindsym $mod+l
+#bindsym $mod+Shift+l
+
 
 #bindsym $mod+z
 #bindsym $mod+Shift+z
 
-bindsym $mod+x				mode "$mode_system"
-bindsym $mod+Shift+x			exit
+#bindsym $mod+x
+bindsym $mod+Shift+x			mode "$mode_system"
 
 #bindsym $mod+c
 #bindsym $mod+Shift+c
@@ -307,7 +293,7 @@ bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
 #bindsym $mod+m
 #bindsym $mod+Shift+m
 
-#--------------------SYMBOL KEYS-------------------------------------------------------------------#
+#--------------------SYMBOL-KEYS-------------------------------------------------------------------#
 #bindsym $mod+grave
 #bindsym $mod+Shift+grave
 
@@ -328,6 +314,9 @@ bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
 #bindsym $mod+Shift+backslash
 
 
+#bindsym $mod+semicolon
+#bindsym $mod+Shift+semicolon
+
 #bindsym $mod+apostrophe
 #bindsym $mod+Shift+apostrophe
 
@@ -341,7 +330,7 @@ bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
 #bindsym $mod+slash
 #bindsym $mod+Shift+slash
 
-#--------------------F KEYS------------------------------------------------------------------------#
+#--------------------F-KEYS------------------------------------------------------------------------#
 #bindsym $mod+F1
 #bindsym $mod+Shift+F1
 
