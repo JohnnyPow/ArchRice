@@ -252,7 +252,7 @@ bindsym $mod+p				exec pamac-manager
 bindsym $mod+s				exec spotify --force-device-scale-factor=2
 #bindsym $mod+Shift+s
 
-bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
+bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 #bindsym $mod+Shift+d
 
 bindsym $mod+f				fullscreen toggle
