@@ -54,11 +54,11 @@ font-0 = DejaVuSans:pixelsize=22;1
 font-1 = unifont:fontformat=truetype:size=18:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=72;1
 
-#modules-left = i3
-modules-left = i3 mpd
+modules-left = i3
+#modules-left = i3 mpd
 #modules-center = mpd
 #modules-right = volume wlan eth battery temperature date
-modules-right = filesystem home volume wlan battery date
+modules-right = xwindow filesystem home volume xkeyboard wlan battery date
 
 tray-position = right
 tray-padding = 0

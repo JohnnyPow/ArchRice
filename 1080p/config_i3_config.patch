@@ -39,6 +39,14 @@
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 < bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
+252c259
+< bindsym $mod+s				exec spotify --force-device-scale-factor=2
+---
+> bindsym $mod+s				exec spotify
+255c262
+< bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
+---
+> bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
 287c294
 < #bindsym $mod+Shift+v
 ---

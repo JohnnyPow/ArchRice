@@ -2,6 +2,10 @@
 < height = 48
 ---
 > height = 24
+41c41
+< line-size = 6
+---
+> line-size = 3
 53,54c53,54
 < font-0 = DejaVuSans:pixelsize=22;1
 < font-1 = unifont:fontformat=truetype:size=18:antialias=false;0
@@ -9,9 +13,9 @@
 > font-0 = DejaVuSans:pixelsize=11;1
 > font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
 61c61
-< modules-right = filesystem volume wlan battery date
+< modules-right = xwindow filesystem home volume xkeyboard wlan battery date
 ---
-> modules-right = filesystem home volume date
+> modules-right = xwindow filesystem home volume xkeyboard date
 65c65
 < tray-maxsize = 32
 ---
