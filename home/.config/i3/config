@@ -100,7 +100,7 @@ mode "$mode_system" {
 	bindsym r exec reboot, mode "default"
 	bindsym s exec shutdown -h now, mode "default"
 	bindsym e exit, mode "default"
-	bindsym l exec i3lock -c 181818, mode "default"
+	bindsym l exec i3lock -c 181818 --radius 180 --textsize 56 --ring-width 12, mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
