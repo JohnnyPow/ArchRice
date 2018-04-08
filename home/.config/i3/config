@@ -75,7 +75,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id libinput-gestures-setup start
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id ~/scripts/setkb.sh
+exec_always --no-startup-id ~/.scripts/setkb.sh
 
 #--------------------------------------------------------------------------------------------------#
 #--------------------MODES-------------------------------------------------------------------------#
@@ -234,7 +234,7 @@ bindsym $mod+Shift+r			restart
 #bindsym $mod+Shift+y
 
 #bindsym $mod+u
-bindsym $mod+Shift+u			exec $terminal -e scripts/update.sh
+bindsym $mod+Shift+u			exec $terminal -e ~/.scripts/update.sh
 
 bindsym $mod+i				gaps inner current minus 5
 bindsym $mod+Shift+i			gaps inner current plus 5
@@ -280,7 +280,7 @@ bindsym $mod+h				split h
 #bindsym $mod+x
 bindsym $mod+Shift+x			mode "$mode_system"
 
-bindsym $mod+c				exec $terminal -e vim .config/i3/config
+bindsym $mod+c				exec $terminal -e vim ~/.config/i3/config
 #bindsym $mod+Shift+c
 
 bindsym $mod+v				split v
