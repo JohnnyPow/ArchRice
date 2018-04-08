@@ -10,7 +10,7 @@ There are however multiple patches available (e.g. for 1080p compatibility).
 
 ### Instructions
 1. Backup your existing config files. They will be overwritten!
-2. `git clone https://github.com/JohnnyPow/ArchRice.git`
+2. `git clone https://github.com/JohnnyVim/ArchRice.git`
 3. Read the files before syncing!
 4. `./ArchRice/scripts/sync.sh`
 5. apply necessary patches (e.g. for 1080p `./ArchRice/scripts/patch_1080p.sh`)
