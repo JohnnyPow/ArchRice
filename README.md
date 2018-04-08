@@ -1,3 +1,40 @@
 # ArchRice
+These are the configuration files and scripts I use for my archlinux installations. This is and will always be WIP.  
+The default configuration files are made for a hidpi setup with some system specific settings.  
+There are however multiple patches available (e.g. for 1080p compatibility).
 
-config files and scripts for my setup using Arch + i3 + hidpi settings
+### default system specific settings include (not limited to)
+- hidpi
+- eu keyboard layout
+- single screen connected on eDP1
+
+### Instructions
+1. Backup your existing config files. They will be overwritten!
+2. `git clone https://github.com/JohnnyPow/ArchRice.git`
+3. Read the files before syncing!
+4. `./ArchRice/scripts/sync.sh`
+5. apply necessary patches (e.g. for 1080p `./ArchRice/scripts/patch_1080p.sh`)
+6. adjust settings specific to your system
+7. install the packages you want/need
+8. Tip: You can create your own patch files to make future updating much easier.
+
+### Packages used (incomplete)
+- core
+- extra
+- community
+  - compton
+- AUR
+  - enpass-bin
+  - imwheel
+  - lightdm-slick-greeter
+  - packer
+  - polybar
+  - unclutter-xfixes-git
+
+### Roadmap
+- [x] add scripts for automated updating
+- [ ] remove some system specific settings and make patches "cleaner"
+- [ ] complete package list
+
+### Credits
+stole some ideas and code from [Luke Smith's Rice](https://github.com/LukeSmithxyz/voidrice)
