@@ -1,5 +1,5 @@
-# ArchRice
-These are the configuration files and scripts I use for my archlinux installations. This is and will always be WIP.  
+# My Arch Linux rice
+This is and will always be WIP.  
 The default configuration files are made for a hidpi setup with some system specific settings.  
 There are however multiple patches available (e.g. for 1080p compatibility).
 
@@ -10,10 +10,10 @@ There are however multiple patches available (e.g. for 1080p compatibility).
 
 ### Instructions
 1. Backup your existing config files. They will be overwritten!
-2. `git clone https://github.com/JohnnyVim/ArchRice.git`
+2. `git clone https://github.com/JohnnyVim/arch-rice.git`
 3. Read the files before syncing!
-4. `./ArchRice/scripts/sync.sh`
-5. apply necessary patches (e.g. for 1080p `./ArchRice/scripts/patch_1080p.sh`)
+4. `./arch-rice/scripts/sync.sh`
+5. apply necessary patches (e.g. for 1080p `./arch-rice/scripts/patch_1080p.sh`)
 6. adjust settings specific to your system
 7. install the packages you want/need
 8. Tip: You can create your own patch files to make future updating much easier.
