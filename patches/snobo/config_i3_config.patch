@@ -30,3 +30,7 @@
 < #bindsym $mod+l
 ---
 > bindsym $mod+l				exec phpstorm
+303c301
+< bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Exchange
+---
+> bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Robin

@@ -292,8 +292,8 @@ bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
 #bindsym $mod+n
 #bindsym $mod+Shift+n
 
-#bindsym $mod+m
-#bindsym $mod+Shift+m
+bindsym $mod+m				exec $terminal -e neomutt
+bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Exchange
 
 #--------------------SYMBOL-KEYS-------------------------------------------------------------------#
 #bindsym $mod+grave
