@@ -42,10 +42,12 @@
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 < bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
-252c259
+252,253c259,260
 < bindsym $mod+s				exec spotify --force-device-scale-factor=2
+< bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_notebook.sh
 ---
 > bindsym $mod+s				exec spotify
+> bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_desktop.sh
 255c262
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---

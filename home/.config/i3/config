@@ -250,7 +250,7 @@ bindsym $mod+p				exec pamac-manager
 #bindsym $mod+Shift+a
 
 bindsym $mod+s				exec spotify --force-device-scale-factor=2
-#bindsym $mod+Shift+s
+bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_notebook.sh
 
 bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 #bindsym $mod+Shift+d

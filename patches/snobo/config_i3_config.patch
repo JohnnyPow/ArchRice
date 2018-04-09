@@ -1,0 +1,32 @@
+3c3
+< set $terminal st
+---
+> set $terminal urxvt
+9c9
+< set $screen2 "DVI-D-0"
+---
+> set $screen2 "DP-1"
+68d67
+< exec --no-startup-id enpass startWithTray
+71d69
+< exec --no-startup-id twmnd
+237c235
+< #bindsym $mod+t
+---
+> bindsym $mod+t				exec teamspeak3
+260c258
+< bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_desktop.sh
+---
+> bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_snobo.sh	
+274c272
+< #bindsym $mod+j
+---
+> bindsym $mod+j				exec idea
+277c275
+< #bindsym $mod+k
+---
+> bindsym $mod+k				exec webstorm
+280c278
+< #bindsym $mod+l
+---
+> bindsym $mod+l				exec phpstorm
