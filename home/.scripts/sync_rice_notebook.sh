@@ -3,4 +3,3 @@ cd ~/projects/arch-rice
 
 git pull
 scripts/sync.sh
-scripts/patch_vivaldi.sh
