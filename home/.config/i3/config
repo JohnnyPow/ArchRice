@@ -227,7 +227,7 @@ bindsym $mod+Shift+e			exec $terminal -e sudo ranger /
 bindsym $mod+r				mode "resize"
 bindsym $mod+Shift+r			restart
 
-#bindsym $mod+t
+bindsym $mod+t				exec teamspeak3
 #bindsym $mod+Shift+t
 
 #bindsym $mod+y
