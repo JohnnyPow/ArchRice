@@ -1,7 +1,8 @@
 URxvt.intensityStyles:	false
-!!URxvt.background:       [70]#000000
+URxvt.background:       #202428
+URxvt.foreground:       #2C7873
 URxvt.depth:		32
-URxvt.font: 		xft:Noto Mono:size=11
+URxvt.font: 		xft:DejaVu Sans Mono:size=11
 URxvt.scrollBar:	false
 URxvt.cursorColor:	white
 URxvt.perl-ext-common:	default,matcher,resize-font
@@ -10,8 +11,8 @@ URxvt.url-launcher:	/usr/bin/xdg-open
 URxvt.matcher.button:	1
 URxvt.resize-font.smaller:	C-Down
 URxvt.resize-font.bigger:	C-Up
-
 URxvt.colorUL:		#4682B4
+
 rofi.color-enabled:	true
 rofi.color-window:	#000, #000, #000
 rofi.color-normal:	#111, #819396, #222, #008ed4, #ffffff
