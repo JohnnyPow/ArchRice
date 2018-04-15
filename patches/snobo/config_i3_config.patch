@@ -6,27 +6,49 @@
 < set $screen2 "DVI-D-0"
 ---
 > set $screen2 "DP-1"
+50,51c50,51
+< gaps outer 5
+< gaps inner 5
+---
+> gaps outer 0
+> gaps inner 0
+54c54
+< for_window [class="^.*"] border pixel 4
+---
+> for_window [class="^.*"] border pixel 2
 68d67
 < exec --no-startup-id enpass startWithTray
 71d69
 < exec --no-startup-id twmnd
-260c258
+245,246c243,244
+< bindsym $mod+i				gaps inner current minus 5
+< bindsym $mod+Shift+i			gaps inner current plus 5
+---
+> #bindsym $mod+i				gaps inner current minus 5
+> #bindsym $mod+Shift+i			gaps inner current plus 5
+248,249c246,247
+< bindsym $mod+o				gaps outer current minus 5
+< bindsym $mod+Shift+o			gaps outer current plus 5
+---
+> #bindsym $mod+o				gaps outer current minus 5
+> #bindsym $mod+Shift+o			gaps outer current plus 5
+259c257
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_desktop.sh
 ---
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_snobo.sh	
-274c272
+273c271
 < #bindsym $mod+j
 ---
 > bindsym $mod+j				exec idea
-277c275
+276c274
 < #bindsym $mod+k
 ---
 > bindsym $mod+k				exec webstorm
-280c278
+279c277
 < #bindsym $mod+l
 ---
 > bindsym $mod+l				exec phpstorm
-303c301
+302c300
 < bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Exchange
 ---
 > bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Robin
