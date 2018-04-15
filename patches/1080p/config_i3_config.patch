@@ -14,7 +14,7 @@
 ---
 > exec --no-startup-id imwheel
 103c102,113
-< 	bindsym l exec i3lock -c 181818 --radius 180 --textsize 56 --ring-width 12, mode "default"
+< 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
 ---
 > 	bindsym l exec i3lock -c 181818, mode "default"
 > 
