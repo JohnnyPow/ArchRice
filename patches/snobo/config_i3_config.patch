@@ -10,10 +10,6 @@
 < exec --no-startup-id enpass startWithTray
 71d69
 < exec --no-startup-id twmnd
-237c235
-< #bindsym $mod+t
----
-> bindsym $mod+t				exec teamspeak3
 260c258
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_desktop.sh
 ---
