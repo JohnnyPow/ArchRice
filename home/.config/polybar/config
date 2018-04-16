@@ -243,7 +243,7 @@ interval = 3.0
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${xrdb:color5}
 ;format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = %essid% %upspeed% %downspeed%
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
