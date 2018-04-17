@@ -6,6 +6,11 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
+XTerm.vt100.faceName: DejaVu Sans Mono:size=12:antialias=false
+XTerm.vt100.renderFont: true
+XTerm.vt100.foreground: #A0A4A8
+XTerm.vt100.background: black
+
 *foreground: #00cc00
 *foreground_bold: #a8a19f
 *cursor: #a8a19f
