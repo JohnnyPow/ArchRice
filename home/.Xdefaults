@@ -13,6 +13,11 @@ URxvt.resize-font.smaller:	C-Down
 URxvt.resize-font.bigger:	C-Up
 URxvt.colorUL:		#4682B4
 
+XTerm.vt100.faceName: DejaVu Sans Mono:size=24:antialias=false
+XTerm.vt100.renderFont: true
+XTerm.vt100.foreground: #A0A4A8
+XTerm.vt100.background: black
+
 rofi.color-enabled:	true
 rofi.color-window:	#000, #000, #000
 rofi.color-normal:	#111, #819396, #222, #008ed4, #ffffff
