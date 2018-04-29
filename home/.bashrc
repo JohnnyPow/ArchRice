@@ -14,4 +14,4 @@ alias pR='sudo pacman -R'
 alias pRsun='sudo pacman -Rsun'
 alias pSs='pacman -Ss'
 
-PS1='[\u@\h \W]\$ '
+neofetch
