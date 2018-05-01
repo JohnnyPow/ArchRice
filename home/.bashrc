@@ -13,5 +13,3 @@ alias pSy='sudo pacman -Sy'
 alias pR='sudo pacman -R'
 alias pRsun='sudo pacman -Rsun'
 alias pSs='pacman -Ss'
-
-neofetch
