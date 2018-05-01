@@ -28,14 +28,6 @@
 > 	bindsym a exec ~/.scripts/attach.sh, mode "default"
 > 	bindsym s exec ~/.scripts/shutdown.sh, mode "default"
 > 	bindsym f exec ~/.scripts/setkb.sh, mode "default"
-158,160c168,170
-< bindsym XF86AudioMute			exec --no-startup-id amixer -q set Master toggle
-< bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -q set Master 10%- unmute
-< bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -q set Master 10%+ unmute
----
-> bindsym XF86AudioMute			exec --no-startup-id pactl set-sink-mute 0 toggle
-> bindsym XF86AudioLowerVolume		exec --no-startup-id pactl set-sink-volume 0 -10%
-> bindsym XF86AudioRaiseVolume		exec --no-startup-id pactl set-sink-volume 0 +10%
 164,167d173
 < bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
