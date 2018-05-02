@@ -8,14 +8,20 @@
 < gaps inner 10
 ---
 > gaps inner 5
-74,75c74
+73,74c73
 < exec --no-startup-id nm-applet
 < exec --no-startup-id libinput-gestures-setup start
 ---
 > exec --no-startup-id imwheel
-103c102,113
+99,102c98,112
+< 	bindsym r exec reboot, mode "default"
+< 	bindsym s exec shutdown -h now, mode "default"
+< 	bindsym e exit, mode "default"
 < 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
 ---
+> 	bindsym r exec $terminal -e ~/.scripts/exit.sh reboot, mode "default"
+> 	bindsym s exec $terminal -e ~/.scripts/exit.sh shutdown, mode "default"
+> 	bindsym e exec $terminal -e ~/.scripts/exit.sh exit, mode "default"
 > 	bindsym l exec i3lock -c 181818, mode "default"
 > 
 >         bindsym Return mode "default"
@@ -28,22 +34,22 @@
 > 	bindsym a exec ~/.scripts/attach.sh, mode "default"
 > 	bindsym s exec ~/.scripts/shutdown.sh, mode "default"
 > 	bindsym f exec ~/.scripts/setkb.sh, mode "default"
-164,167d173
+163,166d172
 < bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 < bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
-252,253c258,259
+251,252c257,258
 < bindsym $mod+s				exec spotify --force-device-scale-factor=2
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_notebook.sh
 ---
 > bindsym $mod+s				exec spotify
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_desktop.sh
-255c261
+254c260
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-287c293
+286c292
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
