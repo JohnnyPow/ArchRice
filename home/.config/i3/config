@@ -97,7 +97,7 @@ mode "resize" {
 set $mode_system (E)xit, (R)eboot, (S)hutdown, (L)ock
 mode "$mode_system" {
 	bindsym r exec reboot, mode "default"
-	bindsym s exec shutdown -h now, mode "default"
+	bindsym s exec $terminal -e ~/.scripts/poweroff.sh, mode "default"
 	bindsym e exit, mode "default"
 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
 
