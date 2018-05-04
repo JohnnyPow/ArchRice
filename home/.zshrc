@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PROMPT="%n:%~"$'\n'"%# "
+PROMPT="%n:%~"$'\n$ '
 
 autoload -Uz compinit
 compinit
