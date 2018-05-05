@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+bindkey    "^[[3~"          delete-char
+bindkey    "^[3;5~"         delete-char
+
 PROMPT="%n:%~"$'\n$ '
 
 autoload -Uz compinit
