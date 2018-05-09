@@ -242,7 +242,7 @@ bindsym $mod+o				gaps outer current minus 5
 bindsym $mod+Shift+o			gaps outer current plus 5
 
 bindsym $mod+p				exec pamac-manager
-#bindsym $mod+Shift+p
+bindsym $mod+Shift+p			exec enpass
 
 
 #bindsym $mod+a
@@ -257,7 +257,7 @@ bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuS
 bindsym $mod+f				fullscreen toggle
 #bindsym $mod+Shift+f
 
-#bindsym $mod+g
+bindsym $mod+g				exec steam
 #bindsym $mod+Shift+g
 
 bindsym $mod+h				split h

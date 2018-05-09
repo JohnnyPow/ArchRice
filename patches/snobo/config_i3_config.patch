@@ -16,39 +16,43 @@
 < for_window [class="^.*"] border pixel 4
 ---
 > for_window [class="^.*"] border pixel 2
-68d67
+67d66
 < exec --no-startup-id enpass startWithTray
-71d69
+70d68
 < exec --no-startup-id twmnd
-245,246c243,244
+244,245c242,243
 < bindsym $mod+i				gaps inner current minus 5
 < bindsym $mod+Shift+i			gaps inner current plus 5
 ---
 > #bindsym $mod+i				gaps inner current minus 5
 > #bindsym $mod+Shift+i			gaps inner current plus 5
-248,249c246,247
+247,248c245,246
 < bindsym $mod+o				gaps outer current minus 5
 < bindsym $mod+Shift+o			gaps outer current plus 5
 ---
 > #bindsym $mod+o				gaps outer current minus 5
 > #bindsym $mod+Shift+o			gaps outer current plus 5
-259c257
+251c249
+< bindsym $mod+Shift+p			exec enpass
+---
+> #bindsym $mod+Shift+p
+258c256
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_desktop.sh
 ---
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_snobo.sh	
-273c271
+272c270
 < #bindsym $mod+j
 ---
 > bindsym $mod+j				exec idea
-276c274
+275c273
 < #bindsym $mod+k
 ---
 > bindsym $mod+k				exec webstorm
-279c277
+278c276
 < #bindsym $mod+l
 ---
 > bindsym $mod+l				exec phpstorm
-302c300
+301c299
 < bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Exchange
 ---
 > bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Robin
