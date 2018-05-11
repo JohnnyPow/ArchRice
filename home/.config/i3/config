@@ -285,8 +285,8 @@ bindsym $mod+c				exec $terminal -e vim ~/.config/i3/config
 bindsym $mod+v				split v
 #bindsym $mod+Shift+v
 
-bindsym $mod+b				exec GTK_THEME=Adwaita:light waterfox
-bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
+bindsym $mod+b				exec firefox
+bindsym $mod+Shift+b			exec firefox --private-window
 
 bindsym $mod+n				exec devmon -c
 bindsym $mod+Shift+n			exec devmon -r
