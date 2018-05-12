@@ -62,8 +62,8 @@
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
 288,289c294,295
-< bindsym $mod+b				exec firefox
-< bindsym $mod+Shift+b			exec firefox --private-window
+< bindsym $mod+b				exec vivaldi-snapshot
+< bindsym $mod+Shift+b			exec vivaldi-snapshot --incognito
 ---
 > bindsym $mod+b				exec GTK_THEME=Adwaita:light waterfox
 > bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
