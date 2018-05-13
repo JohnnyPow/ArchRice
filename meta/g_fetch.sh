@@ -2,4 +2,5 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR/..
 
-rsync -rtvp home/ ~
+git fetch --all
+git reset --hard origin/master

@@ -2,13 +2,15 @@
 < set $terminal st
 ---
 > set $terminal urxvt
-9c9
-< set $screen2 "DVI-D-0"
+8,9c8,9
+< set $screen1 "eDP1"
+< set $screen2 "eDP1"
 ---
+> set $screen1 "HDMI-0"
 > set $screen2 "DP-1"
 50,51c50,51
 < gaps outer 5
-< gaps inner 5
+< gaps inner 10
 ---
 > gaps outer 0
 > gaps inner 0
@@ -20,39 +22,94 @@
 < exec --no-startup-id enpass startWithTray
 70d68
 < exec --no-startup-id twmnd
-244,245c242,243
+73,74c71
+< exec --no-startup-id nm-applet
+< exec --no-startup-id libinput-gestures-setup start
+---
+> exec --no-startup-id imwheel
+99,102c96,110
+< 	bindsym r exec reboot, mode "default"
+< 	bindsym s exec shutdown -h now, mode "default"
+< 	bindsym e exit, mode "default"
+< 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
+---
+> 	bindsym r exec $terminal -e ~/.scripts/sys_exit.sh reboot, mode "default"
+> 	bindsym s exec $terminal -e ~/.scripts/sys_exit.sh shutdown, mode "default"
+> 	bindsym e exec $terminal -e ~/.scripts/sys_exit.sh exit, mode "default"
+> 	bindsym l exec i3lock -c 181818, mode "default"
+> 
+>         bindsym Return mode "default"
+>         bindsym Escape mode "default"
+> }
+> 
+> set $mode_vm (W)in 10, (A)ttach, (S)hutdown, (F)ix Keyboard
+> mode "$mode_vm" {
+> 	bindsym w exec ~/.scripts/vm_start.sh, mode "default"
+> 	bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
+> 	bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
+> 	bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
+157,159c165,167
+< bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
+< bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
+< bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
+---
+> bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 0 toggle
+> bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 0 -10%
+> bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +10%
+163,166d170
+< bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
+< bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
+< bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
+< bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
+238,239c242,243
 < bindsym $mod+i				gaps inner current minus 5
 < bindsym $mod+Shift+i			gaps inner current plus 5
 ---
 > #bindsym $mod+i				gaps inner current minus 5
 > #bindsym $mod+Shift+i			gaps inner current plus 5
-247,248c245,246
+241,242c245,246
 < bindsym $mod+o				gaps outer current minus 5
 < bindsym $mod+Shift+o			gaps outer current plus 5
 ---
 > #bindsym $mod+o				gaps outer current minus 5
 > #bindsym $mod+Shift+o			gaps outer current plus 5
-251c249
+245c249
 < bindsym $mod+Shift+p			exec enpass
 ---
 > #bindsym $mod+Shift+p
-258c256
-< bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_desktop.sh
+251,252c255,256
+< bindsym $mod+s				exec spotify --force-device-scale-factor=2
+< bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
-> bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_snobo.sh	
-272c270
+> bindsym $mod+s				exec spotify
+> bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh snobo
+254c258
+< bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
+---
+> bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
+266c270
 < #bindsym $mod+j
 ---
 > bindsym $mod+j				exec idea
-275c273
+269c273
 < #bindsym $mod+k
 ---
 > bindsym $mod+k				exec webstorm
-278c276
+272c276
 < #bindsym $mod+l
 ---
 > bindsym $mod+l				exec phpstorm
-301c299
+286c290
+< #bindsym $mod+Shift+v
+---
+> bindsym $mod+Shift+v			mode "$mode_vm"
+288,289c292,293
+< bindsym $mod+b				exec vivaldi-snapshot
+< bindsym $mod+Shift+b			exec vivaldi-snapshot --incognito
+---
+> bindsym $mod+b				exec GTK_THEME=Adwaita:light waterfox
+> bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
+295c299
 < bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Exchange
 ---
 > bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Robin

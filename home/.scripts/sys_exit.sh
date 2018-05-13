@@ -1,5 +1,4 @@
 #!/bin/bash
-
 ~/.scripts/vm_shutdown.sh
 case $1 in
   shutdown)

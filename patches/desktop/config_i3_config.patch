@@ -19,9 +19,9 @@
 < 	bindsym e exit, mode "default"
 < 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
 ---
-> 	bindsym r exec $terminal -e ~/.scripts/exit.sh reboot, mode "default"
-> 	bindsym s exec $terminal -e ~/.scripts/exit.sh shutdown, mode "default"
-> 	bindsym e exec $terminal -e ~/.scripts/exit.sh exit, mode "default"
+> 	bindsym r exec $terminal -e ~/.scripts/sys_exit.sh reboot, mode "default"
+> 	bindsym s exec $terminal -e ~/.scripts/sys_exit.sh shutdown, mode "default"
+> 	bindsym e exec $terminal -e ~/.scripts/sys_exit.sh exit, mode "default"
 > 	bindsym l exec i3lock -c 181818, mode "default"
 > 
 >         bindsym Return mode "default"
@@ -30,10 +30,10 @@
 > 
 > set $mode_vm (W)in 10, (A)ttach, (S)hutdown, (F)ix Keyboard
 > mode "$mode_vm" {
-> 	bindsym w exec ~/.scripts/win10.sh, mode "default"
-> 	bindsym a exec ~/.scripts/attach.sh, mode "default"
-> 	bindsym s exec ~/.scripts/shutdown.sh, mode "default"
-> 	bindsym f exec ~/.scripts/setkb.sh, mode "default"
+> 	bindsym w exec ~/.scripts/vm_start.sh, mode "default"
+> 	bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
+> 	bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
+> 	bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
 157,159c167,169
 < bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
 < bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
@@ -49,10 +49,10 @@
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
 251,252c257,258
 < bindsym $mod+s				exec spotify --force-device-scale-factor=2
-< bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_notebook.sh
+< bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+s				exec spotify
-> bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/sync_rice_desktop.sh
+> bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh desktop
 254c260
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
