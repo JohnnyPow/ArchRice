@@ -1,10 +1,11 @@
 #!/bin/bash
-~/.scripts/vm_shutdown.sh
 case $1 in
   shutdown)
+    sudo umount /mnt/DISKSTATION/*
     sudo shutdown -h now
   ;;
   reboot)
+    sudo umount /mnt/DISKSTATION/*
     sudo reboot
   ;;
   exit)
