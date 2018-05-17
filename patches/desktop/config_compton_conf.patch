@@ -1,3 +1,7 @@
+11c11
+< backend = "xrender";
+---
+> backend = "glx";
 187c187
 < vsync = "opengl";
 ---
