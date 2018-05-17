@@ -2,18 +2,18 @@
 case $1 in
   default)
     cd ~/projects/arch-rice
-    scripts/upgrade.sh
+    meta/r_upgrade.sh
     rm -rf ~/.scripts/vm*
   ;;
   desktop)
     cd ~/projects/arch-rice
-    scripts/upgrade.sh
-    scripts/patch_desktop.sh
+    meta/r_upgrade.sh
+    meta/p_apply.sh desktop
   ;;
   snobo)
     cd ~/arch-rice
-    scripts/upgrade.sh
-    scripts/patch_snobo.sh
+    meta/r_upgrade.sh
+    meta/p_apply.sh snobo
   ;;
   *)
     echo "ERROR: unknown or insufficient arguments"

@@ -1,6 +1,17 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd $DIR/../patches/snobo
+cd $DIR/../patches
+
+case $1 in
+  desktop)
+    cd desktop
+  ;;
+  snobo)
+    cd snobo
+  ;;
+  *)
+  exit
+esac
 
 patch ~/.config/i3/config config_i3_config.patch
 patch ~/.config/polybar/config config_polybar_config.patch
