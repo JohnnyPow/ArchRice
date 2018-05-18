@@ -8,12 +8,12 @@ case $1 in
   desktop)
     cd ~/projects/arch-rice
     meta/r_upgrade.sh
-    meta/p_apply.sh desktop
+    meta/r_patch.sh apply desktop
   ;;
   snobo)
     cd ~/arch-rice
     meta/r_upgrade.sh
-    meta/p_apply.sh snobo
+    meta/r_patch.sh apply snobo
   ;;
   *)
     echo "ERROR: unknown or insufficient arguments"
