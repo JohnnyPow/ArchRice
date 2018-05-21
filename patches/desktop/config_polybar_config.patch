@@ -60,10 +60,6 @@
 > tray-maxsize = 16
 122d142
 < ;label-active-font = 6
-129c149
-< label-mode-background = ${colors.background}
----
-> label-mode-background = ${colors.primary}
 222d241
 < udspeed-minwidth = 3
 227c246
