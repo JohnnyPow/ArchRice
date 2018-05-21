@@ -4,9 +4,11 @@
 ---
 > set $screen1 "HDMI-0"
 > set $screen2 "DVI-D-0"
-51c51
-< gaps inner 10
+50,51c50,51
+< gaps outer 0
+< gaps inner 0
 ---
+> gaps outer 5
 > gaps inner 5
 70a71
 > exec --no-startup-id numlockx

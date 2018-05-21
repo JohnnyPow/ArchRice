@@ -18,7 +18,7 @@ height = 48
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 6
+line-size = 0
 line-color = {$xrdb:color1}
 
 border-size = 0
@@ -119,14 +119,14 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-label-active-font = 6
+;label-active-font = 6
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-background = ${colors.background}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%

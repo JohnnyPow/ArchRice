@@ -8,12 +8,6 @@
 ---
 > set $screen1 "HDMI-0"
 > set $screen2 "DP-1"
-50,51c50,51
-< gaps outer 5
-< gaps inner 10
----
-> gaps outer 0
-> gaps inner 0
 54c54
 < for_window [class="^.*"] border pixel 4
 ---

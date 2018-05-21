@@ -47,8 +47,8 @@ client.focused_inactive $border-color $inactive-bg-color $text-color $inactive-b
 client.urgent           $border-color $urgent-bg-color   $text-color $urgent-bg-color
 
 #gaps
-gaps outer 5
-gaps inner 10
+gaps outer 0
+gaps inner 0
 
 #floating windows
 for_window [class="^.*"] border pixel 4

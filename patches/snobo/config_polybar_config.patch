@@ -32,7 +32,7 @@
 > ;radius = 6.0
 > fixed-center = false
 21c41
-< line-size = 6
+< line-size = 0
 ---
 > line-size = 3
 30c50,51
@@ -59,7 +59,11 @@
 > tray-padding = 0
 > tray-maxsize = 16
 122d142
-< label-active-font = 6
+< ;label-active-font = 6
+129c149
+< label-mode-background = ${colors.background}
+---
+> label-mode-background = ${colors.primary}
 222d241
 < udspeed-minwidth = 3
 227c246
