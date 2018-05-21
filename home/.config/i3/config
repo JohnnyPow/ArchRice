@@ -68,13 +68,11 @@ exec --no-startup-id enpass startWithTray
 exec --no-startup-id unclutter --timeout 2
 exec --no-startup-id devmon
 exec --no-startup-id twmnd
-exec --no-startup-id numlockx
 
 exec --no-startup-id nm-applet
 exec --no-startup-id libinput-gestures-setup start
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id ~/.scripts/sys_setkb.sh
 
 #--------------------------------------------------------------------------------------------------#
 #--------------------MODES-------------------------------------------------------------------------#

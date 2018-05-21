@@ -8,12 +8,16 @@
 < gaps inner 10
 ---
 > gaps inner 5
-73,74c73
+70a71
+> exec --no-startup-id numlockx
+72,73c73
 < exec --no-startup-id nm-applet
 < exec --no-startup-id libinput-gestures-setup start
 ---
 > exec --no-startup-id imwheel
-99,102c98,112
+75a76
+> exec_always --no-startup-id ~/.scripts/sys_setkb.sh
+97,100c98,112
 < 	bindsym r exec reboot, mode "default"
 < 	bindsym s exec shutdown -h now, mode "default"
 < 	bindsym e exit, mode "default"
@@ -34,7 +38,7 @@
 > 	bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
 > 	bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
 > 	bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
-157,159c167,169
+155,157c167,169
 < bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
 < bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
 < bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
@@ -42,22 +46,22 @@
 > bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 0 toggle
 > bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 0 -10%
 > bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +10%
-163,166d172
+161,164d172
 < bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 < bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
-251,252c257,258
+249,250c257,258
 < bindsym $mod+s				exec spotify --force-device-scale-factor=2
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+s				exec spotify
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh desktop
-254c260
+252c260
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-286c292
+284c292
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
