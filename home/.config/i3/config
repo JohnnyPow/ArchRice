@@ -72,7 +72,13 @@ exec --no-startup-id twmnd
 exec --no-startup-id nm-applet
 exec --no-startup-id libinput-gestures-setup start
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec-always --no-startup-id feh --bg-fill ~/.config/wall.png
+
+bar {
+  status_command i3blocks
+  position top
+  font pango:DejaVu Sans 10
+}
 
 #--------------------------------------------------------------------------------------------------#
 #--------------------MODES-------------------------------------------------------------------------#
@@ -152,9 +158,9 @@ bindsym $mod+Right			focus right
 bindsym $mod+Shift+Right		move right 100
 
 #--------------------MEDIA-KEYS--------------------------------------------------------------------#
-bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
-bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
-bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
+bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute; exec pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute; exec pkill -RTMIN+10 i3blocks
 bindsym XF86AudioPrev			exec --no-startup-id playerctl previous
 bindcode 172				exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext			exec --no-startup-id playerctl next

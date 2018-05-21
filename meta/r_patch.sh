@@ -40,6 +40,7 @@ cmd[4]=.scripts/vm_mouse.xml
 cmd[5]=.scripts/sys_exit.sh
 cmd[6]=.scripts/sys_setkb.sh
 cmd[7]=.Xresources
+cmd[8]=.config/i3blocks/config
 
 for cm in ${cmd[@]}; do
   case $1 in

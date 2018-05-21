@@ -1,0 +1,24 @@
+command=/usr/lib/i3blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+[volume]
+label=VOL
+interval=once
+signal=10
+
+[iface]
+color=#00FF00
+interval=10
+
+[wifi]
+instance=wlp2s0
+interval=10
+
+[battery]
+command=acpi | cut -d " " -f3-4 |  sed -e "s/,//g;s/Discharging/🔋/;s/Charging/🔌/;s/Unknown/🔌/;s/Full/⚡/"
+interval=1
+
+[time]
+command=echo $(date '+%Y-%m-%d %I:%M%p')
+interval=1

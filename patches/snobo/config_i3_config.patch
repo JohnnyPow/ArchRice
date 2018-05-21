@@ -29,9 +29,18 @@
 < exec --no-startup-id libinput-gestures-setup start
 ---
 > exec --no-startup-id imwheel
-75a74
+75,81c73,74
+< exec-always --no-startup-id feh --bg-fill ~/.config/wall.png
+< 
+< bar {
+<   status_command i3blocks
+<   position top
+<   font pango:DejaVu Sans 10
+< }
+---
+> exec_always --no-startup-id ~/.config/polybar/launch.sh
 > exec_always --no-startup-id ~/.scripts/sys_setkb.sh
-97,100c96,110
+103,106c96,110
 < 	bindsym r exec reboot, mode "default"
 < 	bindsym s exec shutdown -h now, mode "default"
 < 	bindsym e exit, mode "default"
@@ -52,68 +61,68 @@
 > 	bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
 > 	bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
 > 	bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
-155,157c165,167
-< bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
-< bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
-< bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
+161,163c165,167
+< bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
+< bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute; exec pkill -RTMIN+10 i3blocks
+< bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute; exec pkill -RTMIN+10 i3blocks
 ---
 > bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 0 toggle
 > bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 0 -10%
 > bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +10%
-161,164d170
+167,170d170
 < bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 < bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
-236,237c242,243
+242,243c242,243
 < bindsym $mod+i				gaps inner current minus 5
 < bindsym $mod+Shift+i			gaps inner current plus 5
 ---
 > #bindsym $mod+i				gaps inner current minus 5
 > #bindsym $mod+Shift+i			gaps inner current plus 5
-239,240c245,246
+245,246c245,246
 < bindsym $mod+o				gaps outer current minus 5
 < bindsym $mod+Shift+o			gaps outer current plus 5
 ---
 > #bindsym $mod+o				gaps outer current minus 5
 > #bindsym $mod+Shift+o			gaps outer current plus 5
-243c249
+249c249
 < bindsym $mod+Shift+p			exec enpass
 ---
 > #bindsym $mod+Shift+p
-249,250c255,256
+255,256c255,256
 < bindsym $mod+s				exec spotify --force-device-scale-factor=2
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+s				exec spotify
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh snobo
-252c258
+258c258
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-264c270
+270c270
 < #bindsym $mod+j
 ---
 > bindsym $mod+j				exec idea
-267c273
+273c273
 < #bindsym $mod+k
 ---
 > bindsym $mod+k				exec webstorm
-270c276
+276c276
 < #bindsym $mod+l
 ---
 > bindsym $mod+l				exec phpstorm
-284c290
+290c290
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
-286,287c292,293
+292,293c292,293
 < bindsym $mod+b				exec vivaldi-snapshot
 < bindsym $mod+Shift+b			exec vivaldi-snapshot --incognito
 ---
 > bindsym $mod+b				exec GTK_THEME=Adwaita:light waterfox
 > bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
-293c299
+299c299
 < bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Exchange
 ---
 > bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Robin
