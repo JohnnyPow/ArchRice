@@ -24,5 +24,5 @@ alias pR='sudo pacman -R'
 alias pRsun='sudo pacman -Rsun'
 alias pSs='pacman -Ss'
 
-alias tw='function _fun(){ streamlink --player mpv twitch.tv/$1 best };_fun'
-alias yt='function _fun(){ youtube-viewer $1 };_fun'
+alias tw='function _fun(){ nohup streamlink --player mpv twitch.tv/$1 best &! };_fun'
+alias yt='function _fun(){ youtube-viewer --video-player mpv $1 };_fun'
