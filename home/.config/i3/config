@@ -72,13 +72,7 @@ exec --no-startup-id twmnd
 exec --no-startup-id nm-applet
 exec --no-startup-id libinput-gestures-setup start
 
-exec-always --no-startup-id feh --bg-fill ~/.config/wall.png
-
-bar {
-  status_command i3blocks
-  position top
-  font pango:DejaVu Sans 10
-}
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 #--------------------------------------------------------------------------------------------------#
 #--------------------MODES-------------------------------------------------------------------------#
