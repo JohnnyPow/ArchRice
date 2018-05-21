@@ -49,7 +49,7 @@
 > font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
 > font-2 = Wuncon Siji:pixelsize=72;1
 40c61
-< modules-right = filesystem home volume xkeyboard wlan battery date
+< modules-right = spotify filesystem home volume xkeyboard wlan battery date
 ---
 > modules-right = filesystem home volume xkeyboard date
 43,44c64,65
@@ -164,3 +164,9 @@
 > ;animation-charging-1 = AC2
 > ;animation-charging-2 = 
 > ;animation-charging-2 = AC3
+407,411d419
+< [module/spotify]
+< type = custom/script
+< exec = ~/.config/polybar/spotify.sh %artist% - %title%
+< tail = true
+< interval = 1

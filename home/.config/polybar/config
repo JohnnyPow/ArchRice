@@ -37,7 +37,7 @@ modules-left = i3
 #modules-left = i3 mpd
 #modules-center = mpd
 #modules-right = volume wlan eth battery temperature date
-modules-right = filesystem home volume xkeyboard wlan battery date
+modules-right = spotify filesystem home volume xkeyboard wlan battery date
 
 tray-position = right
 tray-padding = 6
@@ -404,3 +404,8 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
+[module/spotify]
+type = custom/script
+exec = ~/.config/polybar/spotify.sh %artist% - %title%
+tail = true
+interval = 1
