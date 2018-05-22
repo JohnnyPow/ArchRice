@@ -1,62 +1,27 @@
-3,5c3
+3c3
 < set $terminal st
-< 
-< font pango:DejaVu Sans 12
 ---
 > set $terminal urxvt
-10,11c8,9
+10,11c10,11
 < set $screen1 "eDP1"
 < set $screen2 "eDP1"
 ---
 > set $screen1 "HDMI-0"
 > set $screen2 "DP-1"
-39,42c37,40
-< set $bg-color 	         #202428
-< set $text-color          #F0F0F0
-< set $inactive-text-color #0090FF
-< set $urgent-text-color   #FF0000
----
-> set $bg-color 	         #285577
-> set $inactive-bg-color   #2F343F
-> set $urgent-bg-color     #E53935
-> set $text-color          #000000
-45,49c43,47
-< #                        border        bg        text                 indicator
-< client.focused          $border-color $bg-color $text-color          $indicator-color
-< client.unfocused        $border-color $bg-color $inactive-text-color $inactive-bg-color
-< client.focused_inactive $border-color $bg-color $inactive-text-color $inactive-bg-color
-< client.urgent           $border-color $bg-color $urgent-text-color   $urgent-bg-color
----
-> #                        border        background         text        indicator
-> client.focused          $border-color $bg-color          $text-color $indicator-color
-> client.unfocused        $border-color $inactive-bg-color $text-color $inactive-bg-color
-> client.focused_inactive $border-color $inactive-bg-color $text-color $inactive-bg-color
-> client.urgent           $border-color $urgent-bg-color   $text-color $urgent-bg-color
-52,55c50,51
-< gaps outer 2
-< gaps inner 8
-< 
-< for_window [class=".*"] border normal 0 title_format " %class"
----
-> gaps outer 0
-> gaps inner 0
-57a54,55
-> for_window [class="^.*"] border pixel 2
-> 
-69d66
+69d68
 < exec --no-startup-id enpass startWithTray
-72c69
+72c71
 < exec --no-startup-id twmnd
 ---
 > exec --no-startup-id numlockx
-74,75c71
+74,75c73
 < exec --no-startup-id nm-applet
 < exec --no-startup-id libinput-gestures-setup start
 ---
 > exec --no-startup-id imwheel
-77a74
+77a76
 > exec_always --no-startup-id ~/.scripts/sys_setkb.sh
-99,102c96,110
+99,102c98,112
 < 	bindsym r exec reboot, mode "default"
 < 	bindsym s exec shutdown -h now, mode "default"
 < 	bindsym e exit, mode "default"
@@ -77,7 +42,7 @@
 > 	bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
 > 	bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
 > 	bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
-157,159c165,167
+157,159c167,169
 < bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
 < bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute; exec pkill -RTMIN+10 i3blocks
 < bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute; exec pkill -RTMIN+10 i3blocks
@@ -85,62 +50,60 @@
 > bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 0 toggle
 > bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 0 -10%
 > bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +10%
-163,166d170
+163,166d172
 < bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 < bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
-188d191
-< bindsym --release Print			exec scrot -s '%Y-%m-%d_%s.png' -e 'mv $f ~/Images/Screenshots/'
-239,240c242,243
+239,240c245,246
 < bindsym $mod+i				gaps inner current minus 5
 < bindsym $mod+Shift+i			gaps inner current plus 5
 ---
 > #bindsym $mod+i				gaps inner current minus 5
 > #bindsym $mod+Shift+i			gaps inner current plus 5
-242,243c245,246
+242,243c248,249
 < bindsym $mod+o				gaps outer current minus 5
 < bindsym $mod+Shift+o			gaps outer current plus 5
 ---
 > #bindsym $mod+o				gaps outer current minus 5
 > #bindsym $mod+Shift+o			gaps outer current plus 5
-246c249
+246c252
 < bindsym $mod+Shift+p			exec enpass
 ---
 > #bindsym $mod+Shift+p
-252,253c255,256
+252,253c258,259
 < bindsym $mod+s				exec spotify --force-device-scale-factor=2
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+s				exec spotify
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh snobo
-255c258
+255c261
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-267c270
+267c273
 < #bindsym $mod+j
 ---
 > bindsym $mod+j				exec idea
-270c273
+270c276
 < #bindsym $mod+k
 ---
 > bindsym $mod+k				exec webstorm
-273c276
+273c279
 < #bindsym $mod+l
 ---
 > bindsym $mod+l				exec phpstorm
-287c290
+287c293
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
-289,290c292,293
+289,290c295,296
 < bindsym $mod+b				exec vivaldi-snapshot
 < bindsym $mod+Shift+b			exec vivaldi-snapshot --incognito
 ---
 > bindsym $mod+b				exec GTK_THEME=Adwaita:light waterfox
 > bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
-296c299
+296c302
 < bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Exchange
 ---
 > bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Robin
