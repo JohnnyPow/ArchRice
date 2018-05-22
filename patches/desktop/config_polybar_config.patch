@@ -32,7 +32,7 @@
 > ;radius = 6.0
 > fixed-center = false
 21c41
-< line-size = 0
+< line-size = 6
 ---
 > line-size = 3
 30c50,51

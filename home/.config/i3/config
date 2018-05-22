@@ -2,6 +2,8 @@
 set $mod Mod4
 set $terminal st
 
+font pango:DejaVu Sans 12
+
 floating_modifier $mod
 
 #screen identifiers
@@ -34,25 +36,25 @@ workspace $workspace10 output $screen2
 
 #window colors
 set $border-color        #000000
-set $bg-color 	         #285577
-set $inactive-bg-color   #2F343F
-set $urgent-bg-color     #E53935
-set $text-color          #000000
+set $bg-color 	         #202428
+set $text-color          #F0F0F0
+set $inactive-text-color #0090FF
+set $urgent-text-color   #FF0000
 set $indicator-color 	 #2E9EF4
 
-#                        border        background         text        indicator
-client.focused          $border-color $bg-color          $text-color $indicator-color
-client.unfocused        $border-color $inactive-bg-color $text-color $inactive-bg-color
-client.focused_inactive $border-color $inactive-bg-color $text-color $inactive-bg-color
-client.urgent           $border-color $urgent-bg-color   $text-color $urgent-bg-color
+#                        border        bg        text                 indicator
+client.focused          $border-color $bg-color $text-color          $indicator-color
+client.unfocused        $border-color $bg-color $inactive-text-color $inactive-bg-color
+client.focused_inactive $border-color $bg-color $inactive-text-color $inactive-bg-color
+client.urgent           $border-color $bg-color $urgent-text-color   $urgent-bg-color
 
 #gaps
-gaps outer 0
-gaps inner 0
+gaps outer 2
+gaps inner 8
+
+for_window [class=".*"] border normal 0 title_format " %class"
 
 #floating windows
-for_window [class="^.*"] border pixel 4
-
 for_window [class="Enpass-Desktop"] floating enable
 for_window [class="Impactor"] floating enable
 for_window [class="Alsa-tray"] floating enable
@@ -183,6 +185,7 @@ bindsym $mod+Return			exec $terminal
 #bindsym $mod+Shift+Menu
 
 
+bindsym --release Print			exec scrot -s '%Y-%m-%d_%s.png' -e 'mv $f ~/Images/Screenshots/'
 #bindsym $mod+Print
 #bindsym $mod+Shift+Print
 

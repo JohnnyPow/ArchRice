@@ -18,7 +18,7 @@ height = 48
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 0
+line-size = 6
 line-color = {$xrdb:color1}
 
 border-size = 0
