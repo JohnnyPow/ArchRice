@@ -66,7 +66,7 @@
 > 
 > set $mode_vm (W)in 10, (A)ttach, (S)hutdown, (F)ix Keyboard
 > mode "$mode_vm" {
-> 	bindsym w exec ~/.scripts/vm_start.sh, mode "default"
+> 	bindsym w exec sudo ~/.scripts/vm_start.sh, mode "default"
 > 	bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
 > 	bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
 > 	bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"

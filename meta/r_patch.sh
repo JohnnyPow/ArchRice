@@ -35,12 +35,10 @@ esac
 cmd[0]=.config/i3/config
 cmd[1]=.config/polybar/config
 cmd[2]=.config/compton.conf
-cmd[3]=.scripts/vm_keyboard.xml
-cmd[4]=.scripts/vm_mouse.xml
-cmd[5]=.scripts/sys_exit.sh
-cmd[6]=.scripts/sys_setkb.sh
-cmd[7]=.Xresources
-cmd[8]=.config/i3blocks/config
+cmd[3]=.scripts/sys_exit.sh
+cmd[4]=.scripts/sys_setkb.sh
+cmd[5]=.Xresources
+cmd[6]=.config/i3blocks/config
 
 for cm in ${cmd[@]}; do
   case $1 in

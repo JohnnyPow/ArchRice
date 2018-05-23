@@ -1,5 +1,8 @@
 #!/bin/bash
-sudo virsh detach-device win10 ~/.scripts/vm_keyboard.xml
-sudo virsh detach-device win10 ~/.scripts/vm_mouse.xml
-sudo virsh shutdown win10
+nc 127.0.0.1 1234 << END
+device_del usb_kbd
+device_del usb_mouse
+system_powerdown
+END
+
 killall synergy synergyc
