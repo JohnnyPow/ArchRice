@@ -4,6 +4,7 @@ case $1 in
     cd ~/projects/arch-rice
     meta/r_upgrade.sh
     rm -rf ~/.scripts/vm*
+    rm -rf ~/.vfio
   ;;
   desktop)
     cd ~/projects/arch-rice
