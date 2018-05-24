@@ -1,3 +1,7 @@
+59c59
+< shadow = false;
+---
+> shadow = true;
 187c187
 < vsync = "opengl";
 ---
