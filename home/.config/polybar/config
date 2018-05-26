@@ -289,26 +289,22 @@ format-muted-foreground = ${colors.foreground}
 label-muted = 
 mapped = true
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-
-;bar-volume-width = 11
-;bar-volume-foreground-0 = ${xrdb:color10}
-;bar-volume-foreground-1 = ${xrdb:color10}
-;bar-volume-foreground-2 = ${xrdb:color10}
-;bar-volume-foreground-3 = ${xrdb:color10}
-;bar-volume-foreground-4 = ${xrdb:color10}
-;bar-volume-foreground-5 = ${xrdb:color11}
-;bar-volume-foreground-6 = ${xrdb:color1}
-;bar-volume-gradient = false
-;bar-volume-indicator = |
-;bar-volume-indicator-font = 3
-;bar-volume-fill = =
-;bar-volume-fill-font = 3
-;bar-volume-empty = =
-;bar-volume-empty-font = 3
-;bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-width = 11
+bar-volume-foreground-0 = ${xrdb:color10}
+bar-volume-foreground-1 = ${xrdb:color10}
+bar-volume-foreground-2 = ${xrdb:color10}
+bar-volume-foreground-3 = ${xrdb:color10}
+bar-volume-foreground-4 = ${xrdb:color10}
+bar-volume-foreground-5 = ${xrdb:color11}
+bar-volume-foreground-6 = ${xrdb:color1}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 3
+bar-volume-fill = =
+bar-volume-fill-font = 3
+bar-volume-empty = =
+bar-volume-empty-font = 3
+bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
