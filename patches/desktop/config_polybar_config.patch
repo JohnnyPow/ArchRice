@@ -78,7 +78,7 @@
 > ramp-signal-3 = 4
 > ramp-signal-4 = 5
 283c303
-< format-volume = <label-volume><ramp-volume>
+< format-volume = <label-volume><bar-volume>
 ---
 > format-volume = <label-volume> <bar-volume>
 288,290c308,309
