@@ -1,0 +1,14 @@
+# vim:ft=sh
+alias ls='ls --color=auto'
+alias la='ls -al'
+alias p='pacman'
+alias ps='sudo pacman -S'
+alias psy='sudo pacman -Sy'
+alias psyu='sudo pacman -Syu'
+alias pr='sudo pacman -R'
+alias prsun='sudo pacman -Rsun'
+alias pss='pacman -Ss'
+
+alias tw='function _fun(){ streamlink --player mpv twitch.tv/$1 best };_fun'
+alias yt='function _fun(){ youtube-viewer --video-player mpv $1 };_fun'
+alias twdl='function _fun(){ youtube-dl -o "%(uploader)s_%(title)s_$(($(date +%s%N)/10000000)).%(ext)s" $1 };_fun'
