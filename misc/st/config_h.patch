@@ -1,0 +1,4 @@
+8c8
+< static char *font = "mono:pixelsize=14:antialias=true:autohint=true";
+---
+> static char *font = "DejaVu Sans Mono for Powerline:pixelsize=28:antialias=true:autohint=true";
