@@ -40,16 +40,18 @@
 57a54,55
 > for_window [class="^.*"] border pixel 4
 > 
-72a71
+73c71
+< exec --no-startup-id mpd
+---
 > exec --no-startup-id numlockx
-74,75c73
+75,76c73
 < exec --no-startup-id nm-applet
 < exec --no-startup-id libinput-gestures-setup start
 ---
 > exec --no-startup-id imwheel
-77a76
+78a76
 > exec_always --no-startup-id ~/.scripts/sys_setkb.sh
-99,102c98,112
+100,103c98,112
 < 	bindsym r exec reboot, mode "default"
 < 	bindsym s exec shutdown -h now, mode "default"
 < 	bindsym e exit, mode "default"
@@ -70,7 +72,7 @@
 > 	bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
 > 	bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
 > 	bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
-157,159c167,169
+158,160c167,169
 < bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
 < bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute; exec pkill -RTMIN+10 i3blocks
 < bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute; exec pkill -RTMIN+10 i3blocks
@@ -78,24 +80,28 @@
 > bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 0 toggle
 > bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 0 -10%
 > bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +10%
-163,166d172
+164,167d172
 < bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 < bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
-188d193
+189d193
 < bindsym --release Print			exec scrot -s '%Y-%m-%d_%s.png' -e 'mv $f ~/Images/Screenshots/'
-252,253c257,258
+253,254c257,258
 < bindsym $mod+s				exec spotify --force-device-scale-factor=2
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+s				exec spotify
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh desktop
-255c260
+256c260
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-287c292
+274c278
+< bindsym $mod+l				exec $terminal -e ncmpcpp
+---
+> #bindsym $mod+l
+288c292
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"

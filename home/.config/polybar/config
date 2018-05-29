@@ -33,8 +33,8 @@ font-0 = DejaVu Sans:pixelsize=22;1
 font-1 = Material Design Icons:pixelsize=22;1
 font-2 = unifont:fontformat=truetype:size=22;0
 
-modules-left = i3
-#modules-left = i3 mpd
+#modules-left = i3
+modules-left = i3 mpd
 #modules-center = mpd
 #modules-right = volume wlan eth battery temperature date
 modules-right = spotify filesystem home volume xkeyboard wlan battery date

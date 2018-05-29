@@ -70,6 +70,7 @@ exec --no-startup-id enpass startWithTray
 exec --no-startup-id unclutter --timeout 2
 exec --no-startup-id devmon
 exec --no-startup-id twmnd
+exec --no-startup-id mpd
 
 exec --no-startup-id nm-applet
 exec --no-startup-id libinput-gestures-setup start
@@ -270,7 +271,7 @@ bindsym $mod+h				split h
 #bindsym $mod+k
 #bindsym $mod+Shift+k
 
-#bindsym $mod+l
+bindsym $mod+l				exec $terminal -e ncmpcpp
 #bindsym $mod+Shift+l
 
 
