@@ -8,6 +8,7 @@ alias psyu='sudo pacman -Syu'
 alias pr='sudo pacman -R'
 alias prsun='sudo pacman -Rsun'
 alias pss='pacman -Ss'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 alias tw='function _fun(){ streamlink --player mpv twitch.tv/$1 best };_fun'
 alias yt='function _fun(){ youtube-viewer --video-player mpv $1 };_fun'
