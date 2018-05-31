@@ -418,9 +418,9 @@ startup_screen = media_library
 #
 #clock_display_seconds = no
 #
-display_volume_level = no
+display_volume_level = yes
 #
-#display_bitrate = no
+display_bitrate = yes
 #
 #display_remaining_time = no
 #
