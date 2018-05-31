@@ -23,8 +23,8 @@
 78a76
 > exec_always --no-startup-id ~/.scripts/sys_setkb.sh
 100,103c98,112
-< 	bindsym r exec reboot, mode "default"
-< 	bindsym s exec shutdown -h now, mode "default"
+< 	bindsym r exec ~/.scripts/sys_exit.sh reboot, mode "default"
+< 	bindsym s exec ~/.scripts/sys_exit.sh shutdown, mode "default"
 < 	bindsym e exit, mode "default"
 < 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
 ---
