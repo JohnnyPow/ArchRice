@@ -48,12 +48,6 @@
 > font-0 = DejaVuSans:pixelsize=11;1
 > font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
 > font-2 = Wuncon Siji:pixelsize=72;1
-36,37c57,58
-< #modules-left = i3
-< modules-left = i3 mpd
----
-> modules-left = i3
-> #modules-left = i3 mpd
 40c61
 < modules-right = spotify filesystem home volume xkeyboard wlan battery date
 ---
