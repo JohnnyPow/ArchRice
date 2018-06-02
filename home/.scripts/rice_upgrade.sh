@@ -5,16 +5,19 @@ case $1 in
     meta/r_upgrade.sh
     rm -rf ~/.scripts/vm*
     rm -rf ~/.vfio
+    cp misc/arch_rice_src ~/.config/arch_rice_src
   ;;
   desktop)
     cd ~/projects/arch-rice
     meta/r_upgrade.sh
     meta/r_patch.sh apply desktop
+    cp misc/arch_rice_src_desktop ~/.config/arch_rice_src
   ;;
   snobo)
     cd ~/arch-rice
     meta/r_upgrade.sh
     meta/r_patch.sh apply snobo
+    cp misc/arch_rice_src_snobo ~/.config/arch_rice_src
   ;;
   *)
     echo "ERROR: unknown or insufficient arguments"
