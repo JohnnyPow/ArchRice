@@ -39,6 +39,7 @@ cmd[3]=.scripts/sys_exit.sh
 cmd[4]=.scripts/sys_setkb.sh
 cmd[5]=.Xresources
 cmd[6]=.config/i3blocks/config
+cmd[7]=.scripts/vm_start.sh
 
 for cm in ${cmd[@]}; do
   case $1 in
