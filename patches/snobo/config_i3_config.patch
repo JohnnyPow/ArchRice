@@ -22,7 +22,7 @@
 > exec --no-startup-id imwheel
 78a76
 > exec_always --no-startup-id ~/.scripts/sys_setkb.sh
-103c101,112
+103c101,114
 < 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
 ---
 > 	bindsym l exec i3lock -c 181818, mode "default"
@@ -31,13 +31,15 @@
 >         bindsym Escape mode "default"
 > }
 > 
-> set $mode_vm (W)in 10, (A)ttach, (S)hutdown, (F)ix Keyboard
+> set $mode_vm (W)in 10, (A)ttach, (S)hutdown, (D)isconnect/(C)onnect 2nd Display, (F)ix Keyboard
 > mode "$mode_vm" {
-> 	bindsym w exec sudo ~/.scripts/vm_start.sh, mode "default"
-> 	bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
-> 	bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
-> 	bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
-158,167c167,172
+>         bindsym w exec sudo ~/.scripts/vm_start.sh, mode "default"
+>         bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
+>         bindsym d exec ~/.scripts/vm_display_disconnect.sh, mode "default"
+>         bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
+>         bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
+>         bindsym c exec ~/.scripts/vm_display_connect.sh, mode "default"
+158,167c169,174
 < bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
 < bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
 < bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
@@ -55,57 +57,45 @@
 > bindsym XF86AudioPrev			exec --no-startup-id playerctl previous
 > bindcode 172				exec --no-startup-id playerctl play-pause
 > bindsym XF86AudioNext			exec --no-startup-id playerctl next
-240,241c245,246
-< #bindsym $mod+i
-< #bindsym $mod+Shift+i
----
-> #bindsym $mod+i				gaps inner current minus 5
-> #bindsym $mod+Shift+i			gaps inner current plus 5
-243,244c248,249
-< #bindsym $mod+o
-< #bindsym $mod+Shift+o
----
-> #bindsym $mod+o				gaps outer current minus 5
-> #bindsym $mod+Shift+o			gaps outer current plus 5
-246,247c251,252
+246,247c253,254
 < #bindsym $mod+p
 < bindsym $mod+Shift+p			exec enpass
 ---
 > bindsym $mod+p				exec pamac-manager
 > #bindsym $mod+Shift+p
-253,254c258,259
+253,254c260,261
 < bindsym $mod+s				exec $terminal -e ncmpcpp
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+s				exec spotify
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh snobo
-256c261
+256c263
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-268c273
+268c275
 < #bindsym $mod+j
 ---
 > bindsym $mod+j				exec idea
-271c276
+271c278
 < #bindsym $mod+k
 ---
 > bindsym $mod+k				exec webstorm
-274c279
+274c281
 < #bindsym $mod+l
 ---
 > bindsym $mod+l				exec phpstorm
-288c293
+288c295
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
-290,291c295,296
+290,291c297,298
 < bindsym $mod+b				exec vivaldi-snapshot
 < bindsym $mod+Shift+b			exec vivaldi-snapshot --incognito
 ---
 > bindsym $mod+b				exec GTK_THEME=Adwaita:light waterfox
 > bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
-297c302
+297c304
 < bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Exchange
 ---
 > bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Robin

@@ -22,7 +22,7 @@
 >         bindsym Escape mode "default"
 > }
 > 
-> set $mode_vm (W)in 10, (A)ttach, (S)hutdown, (F)ix Keyboard
+> set $mode_vm (W)in 10, (A)ttach, (S)hutdown, (D)isconnect/(C)onnect 2nd Display, (F)ix Keyboard
 > mode "$mode_vm" {
 > 	bindsym w exec sudo ~/.scripts/vm_start.sh, mode "default"
 > 	bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
