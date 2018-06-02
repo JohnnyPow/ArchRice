@@ -1,0 +1,32 @@
+11,14c11,13
+< vfio_gpu_device="0000:03:00.0"
+< vfio_gpu_audio="0000:03:00.1"
+< vfio_nic="0000:05:00.0"
+< vm_disk="Virtual Disks/win10.qcow2"
+---
+> vfio_gpu_device="0000:02:00.0"
+> vfio_gpu_audio="0000:02:00.1"
+> vm_disk="win10vm/win10.qcow2"
+21c20
+< taskset -c 6-11 qemu-system-x86_64 \
+---
+> qemu-system-x86_64 \
+27,33c26,29
+<         -smp cpus=6,sockets=1,cores=6,threads=1 \
+<         -vcpu vcpunum=0,affinity=6 \
+<         -vcpu vcpunum=1,affinity=7 \
+<         -vcpu vcpunum=2,affinity=8 \
+<         -vcpu vcpunum=3,affinity=9 \
+<         -vcpu vcpunum=4,affinity=10 \
+<         -vcpu vcpunum=5,affinity=11 \
+---
+>         -smp cpus=3,sockets=1,cores=3,threads=1 \
+>         -vcpu vcpunum=0,affinity=1 \
+>         -vcpu vcpunum=1,affinity=2 \
+>         -vcpu vcpunum=2,affinity=3 \
+36c32
+<         -m 16384 \
+---
+>         -m 12288 \
+51d46
+<         -device vfio-pci,host=$vfio_nic \
