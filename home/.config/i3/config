@@ -250,7 +250,7 @@ bindsym $mod+Shift+p			exec enpass
 #bindsym $mod+a
 #bindsym $mod+Shift+a
 
-bindsym $mod+s				exec spotify --force-device-scale-factor=2
+bindsym $mod+s				exec $terminal -e ncmpcpp
 bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 
 bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
@@ -271,7 +271,7 @@ bindsym $mod+h				split h
 #bindsym $mod+k
 #bindsym $mod+Shift+k
 
-bindsym $mod+l				exec $terminal -e ncmpcpp
+#bindsym $mod+l
 #bindsym $mod+Shift+l
 
 

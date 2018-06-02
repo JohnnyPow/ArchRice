@@ -1,45 +1,9 @@
-5,6d4
-< font pango:DejaVu Sans 12
-< 
 10,11c8,9
 < set $screen1 "eDP1"
 < set $screen2 "eDP1"
 ---
 > set $screen1 "HDMI-0"
 > set $screen2 "DVI-D-0"
-39,42c37,40
-< set $bg-color 	         #202428
-< set $text-color          #F0F0F0
-< set $inactive-text-color #0090FF
-< set $urgent-text-color   #FF0000
----
-> set $bg-color 	         #285577
-> set $inactive-bg-color   #2F343F
-> set $urgent-bg-color     #E53935
-> set $text-color          #000000
-45,49c43,47
-< #                        border        bg        text                 indicator
-< client.focused          $border-color $bg-color $text-color          $indicator-color
-< client.unfocused        $border-color $bg-color $inactive-text-color $inactive-bg-color
-< client.focused_inactive $border-color $bg-color $inactive-text-color $inactive-bg-color
-< client.urgent           $border-color $bg-color $urgent-text-color   $urgent-bg-color
----
-> #                        border        background         text        indicator
-> client.focused          $border-color $bg-color          $text-color $indicator-color
-> client.unfocused        $border-color $inactive-bg-color $text-color $inactive-bg-color
-> client.focused_inactive $border-color $inactive-bg-color $text-color $inactive-bg-color
-> client.urgent           $border-color $urgent-bg-color   $text-color $urgent-bg-color
-52,55c50,51
-< gaps outer 2
-< gaps inner 8
-< 
-< for_window [class=".*"] border normal 0 title_format " %class"
----
-> gaps outer 5
-> gaps inner 5
-57a54,55
-> for_window [class="^.*"] border pixel 4
-> 
 72a71
 > exec --no-startup-id numlockx
 75,76c74
@@ -83,14 +47,6 @@
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 < bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
-189d194
-< bindsym --release Print			exec scrot -s '%Y-%m-%d_%s.png' -e 'mv $f ~/Images/Screenshots/'
-253,254c258,259
-< bindsym $mod+s				exec spotify --force-device-scale-factor=2
-< bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
----
-> bindsym $mod+s				exec spotify
-> bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh desktop
 256c261
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---

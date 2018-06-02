@@ -73,7 +73,7 @@
 ---
 > #bindsym $mod+Shift+p
 253,254c258,259
-< bindsym $mod+s				exec spotify --force-device-scale-factor=2
+< bindsym $mod+s				exec $terminal -e ncmpcpp
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+s				exec spotify
@@ -91,7 +91,7 @@
 ---
 > bindsym $mod+k				exec webstorm
 274c279
-< bindsym $mod+l				exec $terminal -e ncmpcpp
+< #bindsym $mod+l
 ---
 > bindsym $mod+l				exec phpstorm
 288c293
