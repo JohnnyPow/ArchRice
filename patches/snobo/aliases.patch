@@ -1,0 +1,12 @@
+19,23c19,23
+< alias rwl='./projects/arch-rice/meta/r_work.sh load'
+< alias rws='./projects/arch-rice/meta/r_work.sh save'
+< alias rwli3='./projects/arch-rice/meta/r_work.sh load .config/i3/config'
+< alias rwsi3='./projects/arch-rice/meta/r_work.sh save .config/i3/config'
+< alias rgp='./projects/arch-rice/meta/g_push.sh'
+---
+> alias rwl='./arch-rice/meta/r_work.sh load'
+> alias rws='./arch-rice/meta/r_work.sh save'
+> alias rwli3='./arch-rice/meta/r_work.sh load .config/i3/config'
+> alias rwsi3='./arch-rice/meta/r_work.sh save .config/i3/config'
+> alias rgp='./arch-rice/meta/g_push.sh'
