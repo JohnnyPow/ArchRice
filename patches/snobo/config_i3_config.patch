@@ -8,21 +8,26 @@
 ---
 > set $screen1 "HDMI-0"
 > set $screen2 "DP-1"
-69d68
+51,54d50
+< #gaps
+< gaps outer 2
+< gaps inner 8
+< 
+69d64
 < exec --no-startup-id enpass startWithTray
-72,73c71
+72,73c67
 < exec --no-startup-id twmnd
 < exec --no-startup-id mpd
 ---
 > exec --no-startup-id numlockx
-75,76c73
+75,76c69
 < exec --no-startup-id nm-applet
 < exec --no-startup-id libinput-gestures-setup start
 ---
 > exec --no-startup-id imwheel
-78a76
+78a72
 > exec_always --no-startup-id ~/.scripts/sys_setkb.sh
-103c101,114
+103c97,110
 < 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
 ---
 > 	bindsym l exec i3lock -c 181818, mode "default"
@@ -39,7 +44,7 @@
 >         bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
 >         bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
 >         bindsym c exec ~/.scripts/vm_display_connect.sh, mode "default"
-158,167c169,174
+158,167c165,170
 < bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
 < bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
 < bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
@@ -57,45 +62,45 @@
 > bindsym XF86AudioPrev			exec --no-startup-id playerctl previous
 > bindcode 172				exec --no-startup-id playerctl play-pause
 > bindsym XF86AudioNext			exec --no-startup-id playerctl next
-246,247c253,254
+246,247c249,250
 < #bindsym $mod+p
 < bindsym $mod+Shift+p			exec enpass
 ---
 > bindsym $mod+p				exec pamac-manager
 > #bindsym $mod+Shift+p
-253,254c260,261
+253,254c256,257
 < bindsym $mod+s				exec $terminal -e ncmpcpp
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+s				exec spotify
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh snobo
-256c263
+256c259
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-268c275
+268c271
 < #bindsym $mod+j
 ---
 > bindsym $mod+j				exec idea
-271c278
+271c274
 < #bindsym $mod+k
 ---
 > bindsym $mod+k				exec webstorm
-274c281
+274c277
 < #bindsym $mod+l
 ---
 > bindsym $mod+l				exec phpstorm
-288c295
+288c291
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
-290,291c297,298
+290,291c293,294
 < bindsym $mod+b				exec vivaldi-snapshot
 < bindsym $mod+Shift+b			exec vivaldi-snapshot --incognito
 ---
 > bindsym $mod+b				exec GTK_THEME=Adwaita:light waterfox
 > bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
-297c304
+297c300
 < bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Exchange
 ---
 > bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Robin
