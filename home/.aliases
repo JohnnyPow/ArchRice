@@ -15,3 +15,8 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias tw='function _fun(){ streamlink --player mpv twitch.tv/$1 best };_fun'
 alias yt='function _fun(){ youtube-viewer --video-player mpv $1 };_fun'
 alias twdl='function _fun(){ output=$(youtube-dl --get-filename -o "%(uploader)s_%(title)s_$(($(date +%s%N)/10000000)).%(ext)s" $1); streamlink -o $output $1 best };_fun'
+
+alias rwl='./projects/arch-rice/meta/r_work.sh load'
+alias rws='./projects/arch-rice/meta/r_work.sh save'
+alias rwli3='./projects/arch-rice/meta/r_work.sh load .config/i3/config'
+alias rwsi3='./projects/arch-rice/meta/r_work.sh save .config/i3/config'

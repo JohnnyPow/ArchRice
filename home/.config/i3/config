@@ -97,9 +97,9 @@ mode "resize" {
 
 set $mode_system (E)xit, (R)eboot, (S)hutdown, (L)ock
 mode "$mode_system" {
-	bindsym r exec ~/.scripts/sys_exit.sh reboot, mode "default"
-	bindsym s exec ~/.scripts/sys_exit.sh shutdown, mode "default"
-	bindsym e exit, mode "default"
+	bindsym r exec $terminal -e ~/.scripts/sys_exit.sh reboot, mode "default"
+	bindsym s exec $terminal -e ~/.scripts/sys_exit.sh shutdown, mode "default"
+	bindsym e exec $terminal -e ~/.scripts/sys_exit.sh exit, mode "default"
 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
 
         bindsym Return mode "default"
@@ -155,12 +155,12 @@ bindsym $mod+Right			focus right
 bindsym $mod+Shift+Right		move right 100
 
 #--------------------MEDIA-KEYS--------------------------------------------------------------------#
-bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute; exec pkill -RTMIN+10 i3blocks
-bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute; exec pkill -RTMIN+10 i3blocks
-bindsym XF86AudioPrev			exec --no-startup-id playerctl previous
-bindcode 172				exec --no-startup-id playerctl play-pause
-bindsym XF86AudioNext			exec --no-startup-id playerctl next
+bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
+bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
+bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
+bindsym XF86AudioPrev			exec --no-startup-id mpc prev
+bindcode 172				exec --no-startup-id mpc toggle
+bindsym XF86AudioNext			exec --no-startup-id mpc next
 bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
 bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
@@ -237,13 +237,13 @@ bindsym $mod+t				exec teamspeak3
 #bindsym $mod+u
 bindsym $mod+Shift+u			exec $terminal -e ~/.scripts/sys_upgrade.sh
 
-bindsym $mod+i				gaps inner current minus 5
-bindsym $mod+Shift+i			gaps inner current plus 5
+#bindsym $mod+i
+#bindsym $mod+Shift+i
 
-bindsym $mod+o				gaps outer current minus 5
-bindsym $mod+Shift+o			gaps outer current plus 5
+#bindsym $mod+o
+#bindsym $mod+Shift+o
 
-bindsym $mod+p				exec pamac-manager
+#bindsym $mod+p
 bindsym $mod+Shift+p			exec enpass
 
 

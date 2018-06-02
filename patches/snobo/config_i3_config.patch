@@ -22,15 +22,9 @@
 > exec --no-startup-id imwheel
 78a76
 > exec_always --no-startup-id ~/.scripts/sys_setkb.sh
-100,103c98,112
-< 	bindsym r exec ~/.scripts/sys_exit.sh reboot, mode "default"
-< 	bindsym s exec ~/.scripts/sys_exit.sh shutdown, mode "default"
-< 	bindsym e exit, mode "default"
+103c101,112
 < 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
 ---
-> 	bindsym r exec $terminal -e ~/.scripts/sys_exit.sh reboot, mode "default"
-> 	bindsym s exec $terminal -e ~/.scripts/sys_exit.sh shutdown, mode "default"
-> 	bindsym e exec $terminal -e ~/.scripts/sys_exit.sh exit, mode "default"
 > 	bindsym l exec i3lock -c 181818, mode "default"
 > 
 >         bindsym Return mode "default"
@@ -43,34 +37,41 @@
 > 	bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
 > 	bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
 > 	bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
-158,160c167,169
-< bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
-< bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute; exec pkill -RTMIN+10 i3blocks
-< bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute; exec pkill -RTMIN+10 i3blocks
----
-> bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 0 toggle
-> bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 0 -10%
-> bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +10%
-164,167d172
+158,167c167,172
+< bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
+< bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
+< bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
+< bindsym XF86AudioPrev			exec --no-startup-id mpc prev
+< bindcode 172				exec --no-startup-id mpc toggle
+< bindsym XF86AudioNext			exec --no-startup-id mpc next
 < bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 < bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
+---
+> bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 0 toggle
+> bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 0 -10%
+> bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +10%
+> bindsym XF86AudioPrev			exec --no-startup-id playerctl previous
+> bindcode 172				exec --no-startup-id playerctl play-pause
+> bindsym XF86AudioNext			exec --no-startup-id playerctl next
 240,241c245,246
-< bindsym $mod+i				gaps inner current minus 5
-< bindsym $mod+Shift+i			gaps inner current plus 5
+< #bindsym $mod+i
+< #bindsym $mod+Shift+i
 ---
 > #bindsym $mod+i				gaps inner current minus 5
 > #bindsym $mod+Shift+i			gaps inner current plus 5
 243,244c248,249
-< bindsym $mod+o				gaps outer current minus 5
-< bindsym $mod+Shift+o			gaps outer current plus 5
+< #bindsym $mod+o
+< #bindsym $mod+Shift+o
 ---
 > #bindsym $mod+o				gaps outer current minus 5
 > #bindsym $mod+Shift+o			gaps outer current plus 5
-247c252
+246,247c251,252
+< #bindsym $mod+p
 < bindsym $mod+Shift+p			exec enpass
 ---
+> bindsym $mod+p				exec pamac-manager
 > #bindsym $mod+Shift+p
 253,254c258,259
 < bindsym $mod+s				exec $terminal -e ncmpcpp
