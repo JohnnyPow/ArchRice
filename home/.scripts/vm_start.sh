@@ -1,4 +1,10 @@
 #!/bin/bash
+
+if [[ $(netstat -tln | grep 127.0.0.1:1234) ]]; then
+  echo "VM already running"
+  exit
+fi
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR/..
 
@@ -7,10 +13,7 @@ vfio_gpu_audio="0000:03:00.1"
 vfio_nic="0000:05:00.0"
 vm_disk="Virtual Disks/win10.qcow2"
 uefi_code_path=".vfio/OVMF_CODE.fd"
-uefi_vars_path=".vfio/ovmf_vars_x64_win10.bin"
-
-killall synergy synergyc
-sudo -u $SUDO_USER synergy &
+uefi_vars_path=".vfio/OVMF_VARS.bin"
 
 export QEMU_PA_SERVER="/run/user/$(id -u "$SUDO_USER")/pulse/native"
 cp .config/pulse/cookie /root/.config/pulse/cookie
@@ -47,7 +50,9 @@ taskset -c 6-11 qemu-system-x86_64 \
         -device vfio-pci,host=$vfio_gpu_audio \
         -device vfio-pci,host=$vfio_nic \
         -usb \
-        -drive file="$vm_disk",if=virtio,format=qcow2 \
+        -drive file="$vm_disk",if=none,format=qcow2,id=disk0 \
+        -object iothread,id=iothread0 \
+        -device virtio-blk-pci,scsi=off,drive=disk0,id=virtio-disk0,bootindex=1,iothread=iothread0 \
         -device intel-hda \
         -device hda-duplex \
-        -monitor tcp:127.0.0.1:1234,server,nowait
+        -monitor tcp:127.0.0.1:1234,server,nowait &
