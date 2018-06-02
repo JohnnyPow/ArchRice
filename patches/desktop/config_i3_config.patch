@@ -13,7 +13,7 @@
 > exec --no-startup-id imwheel
 78a79
 > exec_always --no-startup-id ~/.scripts/sys_setkb.sh
-103c104,115
+103c104,117
 < 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
 ---
 > 	bindsym l exec i3lock -c 181818, mode "default"
@@ -26,9 +26,11 @@
 > mode "$mode_vm" {
 > 	bindsym w exec sudo ~/.scripts/vm_start.sh, mode "default"
 > 	bindsym a exec ~/.scripts/vm_attach.sh, mode "default"
+> 	bindsym d exec ~/.scripts/vm_display_disconnect.sh, mode "default"
 > 	bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
 > 	bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
-158,160c170,172
+> 	bindsym c exec ~/.scripts/vm_display_connect.sh, mode "default"
+158,160c172,174
 < bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
 < bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
 < bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
@@ -36,20 +38,20 @@
 > bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 0 toggle
 > bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 0 -10%
 > bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +10%
-164,167d175
+164,167d177
 < bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 < bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
-254c262
+254c264
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh desktop
-256c264
+256c266
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-288c296
+288c298
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
