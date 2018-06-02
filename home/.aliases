@@ -1,13 +1,15 @@
 # vim:ft=sh
 alias ls='ls --color=auto'
 alias la='ls -al'
+
 alias p='pacman'
-alias ps='sudo pacman -S'
-alias psy='sudo pacman -Sy'
-alias psyu='sudo pacman -Syu'
-alias pr='sudo pacman -R'
-alias prsun='sudo pacman -Rsun'
-alias pss='pacman -Ss'
+alias pR='sudo pacman -R'
+alias pRsun='sudo pacman -Rsun'
+alias pS='sudo pacman -S'
+alias pSs='pacman -Ss'
+alias pSy='sudo pacman -Sy'
+alias pSyu='sudo pacman -Syu'
+
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 alias tw='function _fun(){ streamlink --player mpv twitch.tv/$1 best };_fun'
