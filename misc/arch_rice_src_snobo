@@ -1,3 +1,4 @@
+rice_home='~/arch-rice'
 vm_display='DP-0'
 second_display='HDMI-0'
 vm_kbd='vendorid=0x1532,productid=0x011a'
