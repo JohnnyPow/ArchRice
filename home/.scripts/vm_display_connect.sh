@@ -1,4 +1,6 @@
 #!/bin/sh
 
-xrandr --output HDMI-0 --auto --left-of DVI-D-0
-i3-msg reset
+source ~/.config/arch_rice_src
+
+xrandr --output $(vm_display) --auto --left-of $(2nd_display)
+i3-msg restart

@@ -1,3 +1,5 @@
 #!/bin/sh
 
-xrandr --output HDMI-0 --off
+source ~/.config/arch_rice_src
+
+xrandr --output $(vm_display) --off
