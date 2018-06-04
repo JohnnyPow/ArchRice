@@ -94,12 +94,6 @@
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
-290,291c293,294
-< bindsym $mod+b				exec vivaldi-snapshot
-< bindsym $mod+Shift+b			exec vivaldi-snapshot --incognito
----
-> bindsym $mod+b				exec GTK_THEME=Adwaita:light waterfox
-> bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
 297c300
 < bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Exchange
 ---
