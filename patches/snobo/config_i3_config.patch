@@ -27,7 +27,7 @@
 > exec --no-startup-id imwheel
 78a72
 > exec_always --no-startup-id ~/.scripts/sys_setkb.sh
-103c97,110
+103c97,121
 < 	bindsym l exec i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12, mode "default"
 ---
 > 	bindsym l exec i3lock -c 181818, mode "default"
@@ -44,7 +44,18 @@
 >         bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
 >         bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
 >         bindsym c exec ~/.scripts/vm_display_connect.sh, mode "default"
-158,167c165,170
+> 
+>         bindsym Return mode "default"
+>         bindsym Escape mode "default"
+> }
+> 
+> set $mode_ide (W)ebstorm, (I)ntelliJ IDEA, (P)hpStorm, (C)Lion
+> mode "$mode_ide" {
+>         bindsym w exec webstorm, mode "default"
+>         bindsym i exec idea, mode "default"
+>         bindsym p exec phpstorm, mode "default"
+>         bindsym c exec clion, mode "default"
+158,167c176,181
 < bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
 < bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
 < bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
@@ -62,39 +73,31 @@
 > bindsym XF86AudioPrev			exec --no-startup-id playerctl previous
 > bindcode 172				exec --no-startup-id playerctl play-pause
 > bindsym XF86AudioNext			exec --no-startup-id playerctl next
-246,247c249,250
+240c254
+< #bindsym $mod+i
+---
+> bindsym $mod+i				mode "$mode_ide"
+246,247c260,261
 < #bindsym $mod+p
 < bindsym $mod+Shift+p			exec enpass
 ---
 > bindsym $mod+p				exec pamac-manager
 > #bindsym $mod+Shift+p
-253,254c256,257
+253,254c267,268
 < bindsym $mod+s				exec $terminal -e ncmpcpp
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+s				exec spotify
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh snobo
-256c259
+256c270
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-268c271
-< #bindsym $mod+j
----
-> bindsym $mod+j				exec idea
-271c274
-< #bindsym $mod+k
----
-> bindsym $mod+k				exec webstorm
-274c277
-< #bindsym $mod+l
----
-> bindsym $mod+l				exec phpstorm
-288c291
+288c302
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
-297c300
+297c311
 < bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Exchange
 ---
 > bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Robin
