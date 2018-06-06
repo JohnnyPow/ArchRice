@@ -40,6 +40,7 @@ cmd[4]=.scripts/sys_setkb.sh
 cmd[5]=.Xresources
 cmd[6]=.config/i3blocks/config
 cmd[7]=.scripts/vm_start.sh
+cmd[7]=.config/polybar/launch.sh
 
 for cm in ${cmd[@]}; do
   case $1 in

@@ -1,0 +1,4 @@
+14c14
+< feh --bg-fill ~/Images/Wallpapers/wall1.jpg
+---
+> feh --bg-fill ~/.config/wall.png

@@ -11,6 +11,6 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 #polybar example &
 
 for i in $(polybar -m | awk -F: '{print $1}'); do MONITOR=$i polybar mybar -c ~/.config/polybar/config & done
-feh --bg-fill ~/.config/wall.png
+feh --bg-fill ~/Images/Wallpapers/wall1.jpg
 
 echo "Bars launched..."
