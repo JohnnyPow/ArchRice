@@ -35,7 +35,7 @@ workspace $workspace9 output $screen2
 workspace $workspace10 output $screen2
 
 #window colors
-set $border-color        #000000
+set $border-color        #202428
 set $bg-color 	         #202428
 set $text-color          #F0F0F0
 set $inactive-text-color #0090FF
