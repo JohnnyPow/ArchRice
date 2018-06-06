@@ -2,6 +2,10 @@
 < shadow = false;
 ---
 > shadow = true;
+141c141
+< fading = false;
+---
+> fading = true;
 187c187
 < vsync = "opengl";
 ---
