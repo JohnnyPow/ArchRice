@@ -32,7 +32,7 @@ taskset -c 1-5,7-11 qemu-system-x86_64 \
         -no-user-config \
         -boot d \
         -cpu host,kvm=off,hv_time,hv_relaxed,hv_spinlocks=0x1fff,hv_vendor_id=null \
-        -smp cpus=6,sockets=1,cores=5,threads=2 \
+        -smp cpus=10,sockets=1,cores=5,threads=2 \
         -vcpu vcpunum=0,affinity=1 \
         -vcpu vcpunum=1,affinity=7 \
         -vcpu vcpunum=2,affinity=2 \
