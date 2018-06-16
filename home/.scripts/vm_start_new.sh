@@ -26,22 +26,22 @@ echo $IFACE
 # printf -v macaddr "52:54:%02x:%02x:%02x:%02x" $(( $RANDOM & 0xff)) $(( $RANDOM & 0xff )) $(( $RANDOM & 0xff)) $(( $RANDOM & 0xff ))
 macaddr="52:54:8e:ef:70:17"
 
-taskset -c 1-5,7-11 qemu-system-x86_64 \
+taskset -c 2-11 qemu-system-x86_64 \
         -nodefaults \
         -nodefconfig \
         -no-user-config \
         -boot d \
         -cpu host,kvm=off,hv_time,hv_relaxed,hv_spinlocks=0x1fff,hv_vendor_id=null \
-        -smp cpus=10,sockets=1,cores=5,threads=2 \
-        -vcpu vcpunum=0,affinity=1 \
-        -vcpu vcpunum=1,affinity=7 \
-        -vcpu vcpunum=2,affinity=2 \
-        -vcpu vcpunum=3,affinity=8 \
-        -vcpu vcpunum=4,affinity=3 \
-        -vcpu vcpunum=5,affinity=9 \
-        -vcpu vcpunum=6,affinity=4 \
-        -vcpu vcpunum=7,affinity=10 \
-        -vcpu vcpunum=8,affinity=5 \
+        -smp cpus=10,sockets=1,cores=10,threads=1 \
+        -vcpu vcpunum=0,affinity=2 \
+        -vcpu vcpunum=1,affinity=3 \
+        -vcpu vcpunum=2,affinity=4 \
+        -vcpu vcpunum=3,affinity=5 \
+        -vcpu vcpunum=4,affinity=6 \
+        -vcpu vcpunum=5,affinity=7 \
+        -vcpu vcpunum=6,affinity=8 \
+        -vcpu vcpunum=7,affinity=9 \
+        -vcpu vcpunum=8,affinity=10 \
         -vcpu vcpunum=9,affinity=11 \
         -enable-kvm \
         -machine pc,accel=kvm,mem-merge=off \
