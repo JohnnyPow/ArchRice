@@ -37,4 +37,9 @@ There are however multiple patches available (e.g. for 1080p compatibility).
 - [ ] complete package list
 
 ### Credits
-stole some ideas and code from [Luke Smith's Rice](https://github.com/LukeSmithxyz/voidrice)
+stole some ideas and code from [Luke Smith's Rice](https://github.com/LukeSmithxyz/voidrice)  
+VM start script heavily inspired by [John Koelndorfer's version](https://github.com/jkoelndorfer/local-tools/blob/master/workstation/vfio/qemu-win10)  
+  
+other resources:  
+[Arch Wiki](https://wiki.archlinux.org/)  
+[i3 User’s Guide](https://i3wm.org/docs/userguide.html)  
