@@ -23,3 +23,5 @@ alias rws='$rice_home/meta/r_work.sh save'
 alias rwli3='$rice_home/meta/r_work.sh load .config/i3/config'
 alias rwsi3='$rice_home/meta/r_work.sh save .config/i3/config'
 alias rgp='$rice_home/meta/g_push.sh'
+
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
