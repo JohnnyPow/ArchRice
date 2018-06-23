@@ -61,12 +61,12 @@ taskset -c 2-11 qemu-system-x86_64 \
         -device vfio-pci,host=$vfio_gpu_device \
         -device vfio-pci,host=$vfio_gpu_audio \
         -usb \
-        -drive file="$vm_disk",if=none,format=qcow2,id=disk0 \
+        -drive file="$vm_disk",if=none,format=qcow2,id=disk0,cache=writeback \
         -object iothread,id=iothread0 \
         -device virtio-blk-pci,scsi=off,drive=disk0,id=virtio-disk0,bootindex=1,iothread=iothread0 \
         -device intel-hda \
         -device hda-duplex \
-        -net nic,macaddr=$macaddr \
+        -net nic,model=virtio,macaddr=$macaddr \
         -net tap,ifname="$IFACE" \
         -monitor tcp:127.0.0.1:1234,server,nowait
 
