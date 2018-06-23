@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function upgrade {
-  yay -Syu --devel --needed --sudoloop --answerupgrade " " --answerclean All --answeredit None
+  yay -Syu --devel --needed --sudoloop --answerupgrade " " --answerclean All --answeredit None --answerdiff None
 }
 
 news=$(yay -Pw)
