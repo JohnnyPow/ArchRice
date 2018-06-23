@@ -13,10 +13,9 @@
 21c22,23
 < taskset -c 6-11 qemu-system-x86_64 \
 ---
-> qemu-system-x86_64 \
+> taskset -c 2-7 qemu-system-x86_64 \
 > 	-name win10 \
-27,33c29,32
-<         -smp cpus=6,sockets=1,cores=6,threads=1 \
+28,33c30,35
 <         -vcpu vcpunum=0,affinity=6 \
 <         -vcpu vcpunum=1,affinity=7 \
 <         -vcpu vcpunum=2,affinity=8 \
@@ -24,19 +23,21 @@
 <         -vcpu vcpunum=4,affinity=10 \
 <         -vcpu vcpunum=5,affinity=11 \
 ---
->         -smp cpus=3,sockets=1,cores=3,threads=1 \
->         -vcpu vcpunum=0,affinity=1 \
->         -vcpu vcpunum=1,affinity=2 \
->         -vcpu vcpunum=2,affinity=3 \
-36,38c35
+>         -vcpu vcpunum=0,affinity=2 \
+>         -vcpu vcpunum=1,affinity=3 \
+>         -vcpu vcpunum=2,affinity=4 \
+>         -vcpu vcpunum=3,affinity=5 \
+>         -vcpu vcpunum=4,affinity=6 \
+>         -vcpu vcpunum=5,affinity=7 \
+36,38c38
 <         -m 16384 \
 <         -mem-path /dev/hugepages/libvirt/qemu/win10 \
 <         -mem-prealloc \
 ---
 >         -m 12288 \
-51d47
+51d50
 <         -device vfio-pci,host=$vfio_nic \
-55a52,56
+55a55,59
 > 	-device ahci,id=ahci \
 >         -drive file="$disk_iso",if=none,format=raw,cache=none,id=cdrom,readonly=on \
 >         -device ide-cd,bus=ahci.1,drive=cdrom,id=sata-cdrom \
