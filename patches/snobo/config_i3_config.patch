@@ -1,7 +1,3 @@
-3c3
-< set $terminal st
----
-> set $terminal urxvt
 10,11c10,11
 < set $screen1 "eDP1"
 < set $screen2 "eDP1"
