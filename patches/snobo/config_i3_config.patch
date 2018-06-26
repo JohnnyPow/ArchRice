@@ -93,9 +93,3 @@
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
-296,297c310,311
-< bindsym $mod+m				exec thunderbird
-< #bindsym $mod+Shift+m
----
-> bindsym $mod+m				exec $terminal -e neomutt
-> bindsym $mod+Shift+m			exec $terminal -e offlineimap -a Robin
