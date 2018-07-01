@@ -32,8 +32,8 @@ config.bind('K', 'tab-next')
 config.bind('cr', 'tab-only -p')
 config.bind('cl', 'tab-only -n')
 
-config.bind(',y', 'hint links spawn youtube-dl {hint-url}')
-config.bind(',m', 'hint links spawn mpv {hint-url}')
+config.bind(',y', 'hint links spawn -d st -e youtube-dl {hint-url}')
+config.bind(',m', 'hint links spawn -d mpv {hint-url}')
 
 config.bind('<Ctrl+Shift+j>', 'scroll-px 0 400')
 config.bind('<Ctrl+Shift+k>', 'scroll-px 0 -400')
