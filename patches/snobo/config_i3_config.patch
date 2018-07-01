@@ -69,6 +69,12 @@
 > bindsym XF86AudioPrev			exec --no-startup-id playerctl previous
 > bindcode 172				exec --no-startup-id playerctl play-pause
 > bindsym XF86AudioNext			exec --no-startup-id playerctl next
+222,223c236,237
+< bindsym $mod+w				exec GTK_THEME=Adwaita:light waterfox
+< bindsym $mod+Shift+w			exec GTK_THEME=Adwaita:light waterfox -private-window
+---
+> #bindsym $mod+w
+> #bindsym $mod+Shift+w
 240c254
 < #bindsym $mod+i
 ---
@@ -93,3 +99,9 @@
 < #bindsym $mod+Shift+v
 ---
 > bindsym $mod+Shift+v			mode "$mode_vm"
+290,291c304,305
+< bindsym $mod+b				exec qutebrowser
+< bindsym $mod+Shift+b			exec qutebrowser -s content.private_browsing true --temp-basedir
+---
+> bindsym $mod+b				exec GTK_THEME=Adwaita:light waterfox
+> bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
