@@ -1,45 +1,60 @@
-11,14c11,13
+11,13c11,13
 < vfio_gpu_device="0000:03:00.0"
 < vfio_gpu_audio="0000:03:00.1"
-< vfio_nic="0000:05:00.0"
 < vm_disk="Virtual Disks/win10.qcow2"
 ---
 > vfio_gpu_device="0000:02:00.0"
 > vfio_gpu_audio="0000:02:00.1"
 > vm_disk="win10vm/win10.qcow2"
-16a16,17
+15a16,17
 > vm_net_interface=enp4s0
 > disk_iso="Downloads/virtio-win-0.1.149.iso"
-21c22,23
-< taskset -c 6-11 qemu-system-x86_64 \
+20,29c22,23
+< precreationg=$(/usr/bin/ip tuntap list | /usr/bin/cut -d: -f1 | /usr/bin/sort)
+< sudo /usr/bin/ip tuntap add user $USERID mode tap
+< postcreation=$(/usr/bin/ip tuntap list | /usr/bin/cut -d: -f1 | /usr/bin/sort)
+< IFACE=$(comm -13 <(echo "$precreationg") <(echo "$postcreation"))
+< echo $IFACE
+< 
+< # printf -v macaddr "52:54:%02x:%02x:%02x:%02x" $(( $RANDOM & 0xff)) $(( $RANDOM & 0xff )) $(( $RANDOM & 0xff)) $(( $RANDOM & 0xff ))
+< macaddr="52:54:8e:ef:70:17"
+< 
+< taskset -c 2-11 qemu-system-x86_64 \
 ---
 > taskset -c 2-7 qemu-system-x86_64 \
 > 	-name win10 \
-28,33c30,35
-<         -vcpu vcpunum=0,affinity=6 \
-<         -vcpu vcpunum=1,affinity=7 \
-<         -vcpu vcpunum=2,affinity=8 \
-<         -vcpu vcpunum=3,affinity=9 \
-<         -vcpu vcpunum=4,affinity=10 \
-<         -vcpu vcpunum=5,affinity=11 \
+35c29
+<         -smp cpus=10,sockets=1,cores=10,threads=1 \
 ---
->         -vcpu vcpunum=0,affinity=2 \
->         -vcpu vcpunum=1,affinity=3 \
->         -vcpu vcpunum=2,affinity=4 \
->         -vcpu vcpunum=3,affinity=5 \
->         -vcpu vcpunum=4,affinity=6 \
->         -vcpu vcpunum=5,affinity=7 \
-36,38c38
+>         -smp cpus=6,sockets=1,cores=6,threads=1 \
+42,45d35
+<         -vcpu vcpunum=6,affinity=8 \
+<         -vcpu vcpunum=7,affinity=9 \
+<         -vcpu vcpunum=8,affinity=10 \
+<         -vcpu vcpunum=9,affinity=11 \
+48,50c38
 <         -m 16384 \
 <         -mem-path /dev/hugepages/libvirt/qemu/win10 \
 <         -mem-prealloc \
 ---
 >         -m 12288 \
-51d50
-<         -device vfio-pci,host=$vfio_nic \
-55a55,59
+64c52
+<         -drive file="$vm_disk",if=none,format=qcow2,id=disk0,cache=writeback \
+---
+>         -drive file="$vm_disk",if=none,format=qcow2,id=disk0 \
+66a55,59
 > 	-device ahci,id=ahci \
 >         -drive file="$disk_iso",if=none,format=raw,cache=none,id=cdrom,readonly=on \
 >         -device ide-cd,bus=ahci.1,drive=cdrom,id=sata-cdrom \
 > 	-net nic,model=virtio \
 >         -net tap \
+69,75c62
+<         -net nic,model=virtio,macaddr=$macaddr \
+<         -net tap,ifname="$IFACE" \
+<         -monitor tcp:127.0.0.1:1234,server,nowait
+< 
+< sudo ip link set dev $IFACE down &> /dev/null
+< sudo ip tuntap del $IFACE mode tap &> /dev/null
+< 
+---
+>         -monitor tcp:127.0.0.1:1234,server,nowait &
