@@ -24,4 +24,4 @@ alias rwli3='$rice_home/meta/r_work.sh load .config/i3/config'
 alias rwsi3='$rice_home/meta/r_work.sh save .config/i3/config'
 alias rgp='$rice_home/meta/g_push.sh'
 
-alias nord='function _fun(){ sudo openvpn --config /etc/openvpn/ovpn_udp/$1.nordvpn.com.udp.ovpn --auth-user-pass ~/.local/nordvpn.cred };_fun'
+alias tvh='nohup vlc ~/.local/channels > /dev/null &'

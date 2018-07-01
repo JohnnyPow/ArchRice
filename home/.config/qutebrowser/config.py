@@ -23,9 +23,17 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # Type: Font
 c.fonts.monospace = '"DejaVu Sans Mono", "xos4 Terminus", Terminus, Monospace, Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 
+config.bind('j', 'scroll-px 0 40')
+config.bind('k', 'scroll-px 0 -40')
+
 config.bind('J', 'tab-prev')
 config.bind('K', 'tab-next')
-config.bind('cl', 'tab-only -n')
+
 config.bind('cr', 'tab-only -p')
-config.bind(',m', 'hint links spawn mpv {hint-url}')
+config.bind('cl', 'tab-only -n')
+
 config.bind(',y', 'hint links spawn youtube-dl {hint-url}')
+config.bind(',m', 'hint links spawn mpv {hint-url}')
+
+config.bind('<Ctrl+Shift+j>', 'scroll-px 0 400')
+config.bind('<Ctrl+Shift+k>', 'scroll-px 0 -400')
