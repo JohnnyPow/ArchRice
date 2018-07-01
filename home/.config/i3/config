@@ -288,7 +288,7 @@ bindsym $mod+v				split v
 #bindsym $mod+Shift+v
 
 bindsym $mod+b				exec qutebrowser
-bindsym $mod+Shift+b			exec qutebrowser -s content.private_browsing true --temp-basedir
+bindsym $mod+Shift+b			exec qutebrowser ":open -p" --nowindow
 
 bindsym $mod+n				exec devmon -c
 bindsym $mod+Shift+n			exec devmon -r
