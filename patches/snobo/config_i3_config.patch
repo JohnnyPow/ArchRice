@@ -51,7 +51,31 @@
 >         bindsym i exec idea, mode "default"
 >         bindsym p exec phpstorm, mode "default"
 >         bindsym c exec clion, mode "default"
-158,167c176,181
+146,148c164
+< bindsym $mod+Shift+Left			move left 10
+< bindsym $mod+h				focus left
+< bindsym $mod+Shift+h			move left 100
+---
+> bindsym $mod+Shift+Left			move left 100
+151,153c167
+< bindsym $mod+Shift+Down			move down 10
+< bindsym $mod+j				focus down
+< bindsym $mod+Shift+j			move down 100
+---
+> bindsym $mod+Shift+Down			move down 100
+156,158c170
+< bindsym $mod+Shift+Up			move up 10
+< bindsym $mod+k				focus up
+< bindsym $mod+Shift+k			move up 100
+---
+> bindsym $mod+Shift+Up			move up 100
+161,163c173
+< bindsym $mod+Shift+Right		move right 10
+< bindsym $mod+l				focus right
+< bindsym $mod+Shift+l			move right 100
+---
+> bindsym $mod+Shift+Right		move right 100
+166,175c176,181
 < bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
 < bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
 < bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
@@ -69,39 +93,60 @@
 > bindsym XF86AudioPrev			exec --no-startup-id playerctl previous
 > bindcode 172				exec --no-startup-id playerctl play-pause
 > bindsym XF86AudioNext			exec --no-startup-id playerctl next
-222,223c236,237
+230,231c236,237
 < bindsym $mod+w				exec GTK_THEME=Adwaita:light waterfox
 < bindsym $mod+Shift+w			exec GTK_THEME=Adwaita:light waterfox -private-window
 ---
 > #bindsym $mod+w
 > #bindsym $mod+Shift+w
-240c254
+248c254
 < #bindsym $mod+i
 ---
 > bindsym $mod+i				mode "$mode_ide"
-246,247c260,261
+254,255c260,261
 < #bindsym $mod+p
 < bindsym $mod+Shift+p			exec enpass
 ---
 > bindsym $mod+p				exec pamac-manager
 > #bindsym $mod+Shift+p
-253,254c267,268
+261,262c267,268
 < bindsym $mod+s				exec $terminal -e ncmpcpp
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+s				exec spotify
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh snobo
-256c270
+264c270
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-288c302
+272a279,290
+> bindsym $mod+h				split h
+> #bindsym $mod+Shift+h
+> 
+> #bindsym $mod+j
+> #bindsym $mod+Shift+j
+> 
+> #bindsym $mod+k
+> #bindsym $mod+Shift+k
+> 
+> #bindsym $mod+l
+> #bindsym $mod+Shift+l
+> 
+283,284c301,302
+< #bindsym $mod+v
 < #bindsym $mod+Shift+v
 ---
+> bindsym $mod+v				split v
 > bindsym $mod+Shift+v			mode "$mode_vm"
-290,291c304,305
+286,287c304,305
 < bindsym $mod+b				exec qutebrowser
 < bindsym $mod+Shift+b			exec qutebrowser ":open -p" --nowindow
 ---
 > bindsym $mod+b				exec GTK_THEME=Adwaita:light waterfox
 > bindsym $mod+Shift+b			exec GTK_THEME=Adwaita:light waterfox -private-window
+296,297c314,315
+< bindsym $mod+grave			split v
+< bindsym $mod+Shift+grave		split h
+---
+> #bindsym $mod+grave
+> #bindsym $mod+Shift+grave

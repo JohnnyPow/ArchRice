@@ -30,7 +30,7 @@
 > 	bindsym s exec ~/.scripts/vm_shutdown.sh, mode "default"
 > 	bindsym f exec ~/.scripts/sys_setkb.sh, mode "default"
 > 	bindsym c exec ~/.scripts/vm_display_connect.sh, mode "default"
-158,160c172,174
+166,168c180,182
 < bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
 < bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
 < bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
@@ -38,20 +38,22 @@
 > bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 0 toggle
 > bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 0 -10%
 > bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +10%
-164,167d177
+172,175d185
 < bindsym XF86MonBrightnessDown		exec --no-startup-id xbacklight -dec 10
 < bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -set 50
 < bindsym XF86MonBrightnessUp		exec --no-startup-id xbacklight -inc 10
 < bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
-254c264
+262c272
 < bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh default
 ---
 > bindsym $mod+Shift+s			exec $terminal -e ~/.scripts/rice_upgrade.sh desktop
-256c266
+264c274
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-288c298
+283,284c293,294
+< #bindsym $mod+v
 < #bindsym $mod+Shift+v
 ---
+> bindsym $mod+v
 > bindsym $mod+Shift+v			mode "$mode_vm"

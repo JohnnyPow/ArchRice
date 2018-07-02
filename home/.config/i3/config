@@ -143,16 +143,24 @@ bindsym $mod+Shift+0			move container to workspace $workspace10
 
 #--------------------ARROW-KEYS--------------------------------------------------------------------#
 bindsym $mod+Left			focus left
-bindsym $mod+Shift+Left			move left 100
+bindsym $mod+Shift+Left			move left 10
+bindsym $mod+h				focus left
+bindsym $mod+Shift+h			move left 100
 
 bindsym $mod+Down			focus down
-bindsym $mod+Shift+Down			move down 100
+bindsym $mod+Shift+Down			move down 10
+bindsym $mod+j				focus down
+bindsym $mod+Shift+j			move down 100
 
 bindsym $mod+Up				focus up
-bindsym $mod+Shift+Up			move up 100
+bindsym $mod+Shift+Up			move up 10
+bindsym $mod+k				focus up
+bindsym $mod+Shift+k			move up 100
 
 bindsym $mod+Right			focus right
-bindsym $mod+Shift+Right		move right 100
+bindsym $mod+Shift+Right		move right 10
+bindsym $mod+l				focus right
+bindsym $mod+Shift+l			move right 100
 
 #--------------------MEDIA-KEYS--------------------------------------------------------------------#
 bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
@@ -262,18 +270,6 @@ bindsym $mod+f				fullscreen toggle
 bindsym $mod+g				exec steam
 #bindsym $mod+Shift+g
 
-bindsym $mod+h				split h
-#bindsym $mod+Shift+h
-
-#bindsym $mod+j
-#bindsym $mod+Shift+j
-
-#bindsym $mod+k
-#bindsym $mod+Shift+k
-
-#bindsym $mod+l
-#bindsym $mod+Shift+l
-
 
 #bindsym $mod+z
 #bindsym $mod+Shift+z
@@ -284,7 +280,7 @@ bindsym $mod+Shift+x			mode "$mode_system"
 bindsym $mod+c				exec $terminal -e vim ~/.config/i3/config
 #bindsym $mod+Shift+c
 
-bindsym $mod+v				split v
+#bindsym $mod+v
 #bindsym $mod+Shift+v
 
 bindsym $mod+b				exec qutebrowser
@@ -297,8 +293,8 @@ bindsym $mod+m				exec thunderbird
 #bindsym $mod+Shift+m
 
 #--------------------SYMBOL-KEYS-------------------------------------------------------------------#
-#bindsym $mod+grave
-#bindsym $mod+Shift+grave
+bindsym $mod+grave			split v
+bindsym $mod+Shift+grave		split h
 
 #bindsym $mod+minus
 #bindsym $mod+Shift+minus
