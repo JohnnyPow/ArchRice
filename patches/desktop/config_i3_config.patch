@@ -51,9 +51,7 @@
 < bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 ---
 > bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 96 -font "DejaVuSans 16"
-283,284c293,294
-< #bindsym $mod+v
+284c294
 < #bindsym $mod+Shift+v
 ---
-> bindsym $mod+v
 > bindsym $mod+Shift+v			mode "$mode_vm"
