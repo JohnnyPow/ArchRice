@@ -21,12 +21,20 @@
 < 
 < taskset -c 2-11 qemu-system-x86_64 \
 ---
-> taskset -c 2-7 qemu-system-x86_64 \
+> taskset -c 1-3,5-7 qemu-system-x86_64 \
 > 	-name win10 \
-35c29
+35,38c29,30
 <         -smp cpus=10,sockets=1,cores=10,threads=1 \
+<         -vcpu vcpunum=0,affinity=2 \
+<         -vcpu vcpunum=1,affinity=3 \
+<         -vcpu vcpunum=2,affinity=4 \
 ---
 >         -smp cpus=6,sockets=1,cores=6,threads=1 \
+>         -vcpu vcpunum=0,affinity=1 \
+39a32
+>         -vcpu vcpunum=1,affinity=2 \
+40a34
+>         -vcpu vcpunum=2,affinity=3 \
 42,45d35
 <         -vcpu vcpunum=6,affinity=8 \
 <         -vcpu vcpunum=7,affinity=9 \
