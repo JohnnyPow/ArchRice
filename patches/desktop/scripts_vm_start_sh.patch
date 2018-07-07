@@ -1,7 +1,0 @@
-18d17
-< export QEMU_PA_SAMPLES=128
-68c67,68
-< 	-soundhw ac97 \
----
->         -device intel-hda \
->         -device hda-duplex \
