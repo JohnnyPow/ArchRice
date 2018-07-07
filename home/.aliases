@@ -4,10 +4,16 @@ source ~/.config/arch_rice_src
 alias ls='ls --color=auto'
 alias la='ls -al'
 
+alias v='vim'
+alias sv='sudo vim'
+
 alias p='pacman'
+alias pFl='pacman -Fl'
+alias pQi='pacman -Qi'
 alias pR='sudo pacman -R'
 alias pRsun='sudo pacman -Rsun'
 alias pS='sudo pacman -S --needed'
+alias pSi='pacman -Si'
 alias pSs='pacman -Ss'
 alias pSy='sudo pacman -Sy --needed'
 alias pSyu='sudo pacman -Syu'
