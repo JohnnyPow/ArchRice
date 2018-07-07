@@ -8,11 +8,11 @@
 > vm_disk="storage_2/hdgdl/win10backup/win10.qcow2"
 15a16
 > disk_iso="Downloads/virtio-win-0.1.149.iso"
-29c30
+30c31
 < taskset -c 2-11 qemu-system-x86_64 \
 ---
 > taskset -c 1-3,5-7 qemu-system-x86_64 \
-35,38c36,37
+36,39c37,38
 <         -smp cpus=10,sockets=1,cores=10,threads=1 \
 <         -vcpu vcpunum=0,affinity=2 \
 <         -vcpu vcpunum=1,affinity=3 \
@@ -20,22 +20,22 @@
 ---
 >         -smp cpus=6,sockets=1,cores=6,threads=1 \
 >         -vcpu vcpunum=0,affinity=1 \
-39a39
+40a40
 >         -vcpu vcpunum=1,affinity=2 \
-40a41
+41a42
 >         -vcpu vcpunum=2,affinity=3 \
-42,45d42
+43,46d43
 <         -vcpu vcpunum=6,affinity=8 \
 <         -vcpu vcpunum=7,affinity=9 \
 <         -vcpu vcpunum=8,affinity=10 \
 <         -vcpu vcpunum=9,affinity=11 \
-48,50c45
+49,51c46
 <         -m 16384 \
 <         -mem-path /dev/hugepages/libvirt/qemu/win10 \
 <         -mem-prealloc \
 ---
 >         -m 12288 \
-66a62,64
+67a63,65
 > 	-device ahci,id=ahci \
 >         -drive file="$disk_iso",if=none,format=raw,cache=none,id=cdrom,readonly=on \
 >         -device ide-cd,bus=ahci.1,drive=cdrom,id=sata-cdrom \
