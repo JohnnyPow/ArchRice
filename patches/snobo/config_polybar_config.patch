@@ -7,6 +7,10 @@
 > ;   The README contains alot of information
 > ;
 > ;=====================================================
+5c13
+< background = ${xrdb:color0}
+---
+> background = #00000000
 7c15,16
 < foreground = #fff
 ---
@@ -32,7 +36,7 @@
 > ;radius = 6.0
 > fixed-center = false
 21c41
-< line-size = 6
+< line-size = 0
 ---
 > line-size = 3
 30c50,51
@@ -55,7 +59,7 @@
 > modules-left = i3
 > #modules-left = i3 mpd
 40c61
-< modules-right = spotify filesystem home volume xkeyboard wlan battery date
+< modules-right = volume filesystem home wlan battery xkeyboard date
 ---
 > modules-right = filesystem home volume xkeyboard date
 43,44c64,65
@@ -66,6 +70,10 @@
 > tray-maxsize = 16
 122d142
 < ;label-active-font = 6
+133c153
+< label-focused-background = ${xrdb:color4}
+---
+> label-focused-background = ${xrdb:color0}
 222d241
 < udspeed-minwidth = 3
 227c246

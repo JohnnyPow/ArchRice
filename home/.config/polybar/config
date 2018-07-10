@@ -2,7 +2,7 @@
 
 [colors]
 ;background = ${xrdb:color0}
-background = #00000000
+background = ${xrdb:color0}
 background-alt = #444
 foreground = #fff
 foreground-alt = #555
@@ -18,7 +18,7 @@ height = 48
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 6
+line-size = 0
 line-color = {$xrdb:color1}
 
 border-size = 0
@@ -37,7 +37,7 @@ font-2 = unifont:fontformat=truetype:size=22;0
 modules-left = i3 mpd
 #modules-center = mpd
 #modules-right = volume wlan eth battery temperature date
-modules-right = spotify filesystem home volume xkeyboard wlan battery date
+modules-right = volume filesystem home wlan battery xkeyboard date
 
 tray-position = right
 tray-padding = 6
@@ -130,7 +130,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${xrdb:color0}
+label-focused-background = ${xrdb:color4}
 ;label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
