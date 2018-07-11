@@ -15,8 +15,8 @@ let g:netrw_browse_split=4
 let g:netrw_altv=1
 let g:netrw_liststyle=3
 
-vmap <C-y> "+y
-nmap <C-p> "+p
+vmap <C-S-c> "+y
+nmap <C-S-v> "+p
 
 autocmd FileType java nmap ,psvm ipublic static void main(String[] args) {<CR>}<ESC>O  
 autocmd FileType java nmap ,sopl aSystem.out.println("");<ESC>2hi
