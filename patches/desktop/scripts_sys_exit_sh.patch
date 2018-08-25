@@ -1,6 +1,0 @@
-1a2
-> ~/.scripts/vm_shutdown_wrapper.sh
-4d4
-<     sudo umount /mnt/DISKSTATION/*
-8d7
-<     sudo umount /mnt/DISKSTATION/*

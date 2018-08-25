@@ -1,6 +1,0 @@
-rice_home='/home/snobo/arch-rice'
-vm_display='DP-0'
-second_display='HDMI-0'
-vm_kbd='vendorid=0x1532,productid=0x011a'
-vm_mouse='vendorid=0x1532,productid=0x0032'
-vm_ds4='vendorid=0x054c,productid=0x09cc'

@@ -1,5 +1,0 @@
-rice_home='/home/jonas/projects/arch-rice'
-vm_display='HDMI-0'
-second_display='DVI-D-0'
-vm_kbd='vendorid=0x1038,productid=0x1607'
-vm_mouse='vendorid=0x1e7d,productid=0x2e24'

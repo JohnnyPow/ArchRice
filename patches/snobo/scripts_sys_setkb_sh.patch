@@ -1,4 +1,0 @@
-2c2
-< setxkbmap eu -option caps:escape
----
-> setxkbmap de -variant nodeadkeys -option caps:escape

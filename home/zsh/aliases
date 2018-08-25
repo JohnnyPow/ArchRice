@@ -1,0 +1,27 @@
+# vim:ft=sh
+
+alias ls='ls --color=auto'
+alias la='ls -alh'
+
+alias v='vim'
+alias sv='sudo vim'
+
+alias p='pacman'
+alias pFl='pacman -Fl'
+alias pQi='pacman -Qi'
+alias pR='sudo pacman -R'
+alias pRsun='sudo pacman -Rsun'
+alias pS='sudo pacman -S --needed'
+alias pSi='pacman -Si'
+alias pSs='pacman -Ss'
+alias pSy='sudo pacman -Sy --needed'
+alias pSyu='sudo pacman -Syu'
+
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
+alias tw='function _fun(){ nohup streamlink --player mpv twitch.tv/$1 best > /dev/null };_fun'
+alias yt='function _fun(){ youtube-viewer --video-player mpv $1 };_fun'
+alias twdl='function _fun(){ output=$(youtube-dl --get-filename -o "%(uploader)s_%(title)s_$(($(date +%s%N)/10000000)).%(ext)s" $1); streamlink -o $output $1 best };_fun'
+
+alias tvh='nohup vlc ~/.local/channels > /dev/null &'
+alias snap='qemu-img snapshot'
