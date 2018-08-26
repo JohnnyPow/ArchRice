@@ -1,10 +1,11 @@
 #!/bin/bash
-~/.scripts/vm_shutdown_wrapper.sh
 case $1 in
   shutdown)
+    sudo umount /mnt/*
     sudo shutdown -h now
   ;;
   reboot)
+    sudo umount /mnt/*
     sudo reboot
   ;;
   exit)
