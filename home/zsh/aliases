@@ -24,6 +24,7 @@ alias yt='function _fun(){ youtube-viewer --video-player mpv $1 };_fun'
 alias twdl='function _fun(){ output=$(youtube-dl --get-filename -o "%(uploader)s_%(title)s_$(($(date +%s%N)/10000000)).%(ext)s" $1); streamlink -o $output $1 best };_fun'
 
 alias rgp='~/.rice/misc/git_push.sh'
+alias rsu='~/.rice/misc/submodule_upgrade.sh'
 
 alias tvh='nohup vlc ~/.local/channels > /dev/null &'
 alias snap='qemu-img snapshot'

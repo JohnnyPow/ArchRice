@@ -260,7 +260,7 @@ bindsym $mod+Shift+p			exec enpass
 #bindsym $mod+Shift+a
 
 bindsym $mod+s				exec $terminal -e ncmpcpp
-bindsym $mod+Shift+s			exec ~/.rice/misc/deploy.sh
+bindsym $mod+Shift+s			exec $terminal -e ~/.rice/misc/rice_upgrade.sh; exec ~/.rice/misc/deploy.sh
 
 bindsym $mod+d				exec --no-startup-id rofi -i -show run -dpi 192 -font "DejaVuSans 16"
 #bindsym $mod+Shift+d
