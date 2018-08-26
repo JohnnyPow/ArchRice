@@ -12,11 +12,8 @@ alert = #bd2c40
 col = #00f
 
 [bar/mybar]
-;monitor = ${env:MONITOR:HDMI-1}
-;monitor = ${env:MONITOR}
-monitor = ${env:MONITOR:LVDS-1}
 width = 100%
-height = 24
+height = 48
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -32,19 +29,19 @@ padding-right = 0
 
 module-margin = 1
 
-font-0 = DejaVuSans:pixelsize=11;1
-font-1 = Material Design Icons:pixelsize=11;1
-font-2 = unifont:fontformat=truetype:size=11;0
+font-0 = DejaVu Sans:pixelsize=22;1
+font-1 = Material Design Icons:pixelsize=22;1
+font-2 = unifont:fontformat=truetype:size=22;0
 
 #modules-left = i3
 modules-left = i3 mpd
 #modules-center = mpd
 #modules-right = volume wlan eth battery temperature date
-modules-right = volume filesystem home xkeyboard date
+modules-right = volume filesystem home wlan battery xkeyboard date
 
 tray-position = right
-tray-padding = 3
-tray-maxsize = 16
+tray-padding = 6
+tray-maxsize = 32
 ;tray-transparent = true
 tray-background = ${colors.background}
 

@@ -4,14 +4,14 @@ date=$(date +%F_%H%M%S)
 mkdir -p ~/.rice/backups/$date && cd "$_"
 
 deploy_file() {
-cp ~/$2 .
+mkdir -p ./$(dirname $1) && cp ~/$2 $1
 mkdir -p ~/$(dirname $2)
 ln -sf ~/.rice/home/$1 ~/$2
 }
 
 deploy_directory() {
-cp -rL ~/$2 .
-mkdir -p ~/$(dirname $2)
+cp -rL ~/$2 ./$1
+mkdir -p ./$(dirname $1) && cp ~/$2 $1
 rm -rf ~/$2
 ln -sfT ~/.rice/home/$1 ~/$2
 }
@@ -26,6 +26,7 @@ deploy_file Xresources .Xresources
 deploy_file config/mpd/mpd.conf .config/mpd/mpd.conf
 deploy_file config/qutebrowser/config.py .config/qutebrowser/config.py
 deploy_file config/compton.conf .config/compton.conf
+deploy_file config/i3/config .config/i3/config
 
 deploy_directory ncmpcpp .ncmpcpp
 deploy_directory vim/colors .vim/colors
