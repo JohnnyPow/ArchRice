@@ -24,7 +24,6 @@ deploy_file Xdefaults .Xdefaults
 deploy_file xprofile .xprofile
 deploy_file Xresources .Xresources
 deploy_file config/mpd/mpd.conf .config/mpd/mpd.conf
-deploy_file config/qutebrowser/config.py .config/qutebrowser/config.py
 deploy_file config/compton.conf .config/compton.conf
 deploy_file config/i3/config .config/i3/config
 
