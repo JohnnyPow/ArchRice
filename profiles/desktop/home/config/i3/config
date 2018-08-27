@@ -73,7 +73,7 @@ exec --no-startup-id devmon
 exec --no-startup-id twmnd
 exec --no-startup-id numlockx
 exec --no-startup-id mpd
-exec --no-startup-id sudo ~/.rice/profiles/desktop/vm/if.sh
+exec --no-startup-id sudo ~/.rice/vm/if.sh
 
 exec --no-startup-id imwheel
 
