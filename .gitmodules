@@ -4,6 +4,7 @@
 [submodule "misc/st"]
 	path = misc/st
 	url = https://github.com/JohnnyVim/st.git
+	branch = patched
 [submodule "home/zsh/oh-my-zsh"]
 	path = home/zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
