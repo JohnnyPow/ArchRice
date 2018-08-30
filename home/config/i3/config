@@ -67,7 +67,6 @@ for_window [class="jetbrains-toolbox"] floating enable
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id compton --xrender-sync-fence
-exec --no-startup-id enpass startWithTray
 exec --no-startup-id unclutter --timeout 2
 exec --no-startup-id devmon
 exec --no-startup-id twmnd
@@ -253,7 +252,7 @@ bindsym $mod+Shift+u			exec $terminal -e ~/.rice/misc/sys_upgrade.sh
 #bindsym $mod+Shift+o
 
 #bindsym $mod+p
-bindsym $mod+Shift+p			exec enpass
+bindsym $mod+Shift+p			exec --no-startup-id passmenu -i -show run -dpi 192 -font "DejaVuSans 16"
 
 
 #bindsym $mod+a
@@ -284,8 +283,8 @@ bindsym $mod+c				exec $terminal -e vim ~/.config/i3/config
 #bindsym $mod+v
 #bindsym $mod+Shift+v
 
-bindsym $mod+b				exec qutebrowser
-bindsym $mod+Shift+b			exec qutebrowser ":open -p" --nowindow
+bindsym $mod+b				exec ~/.local/launch_qutebrowser.sh
+bindsym $mod+Shift+b			exec ~/.local/launch_qutebrowser_private.sh
 
 bindsym $mod+n				exec devmon -c
 bindsym $mod+Shift+n			exec devmon -r
@@ -324,7 +323,7 @@ bindsym $mod+Shift+grave		split h
 #bindsym $mod+comma
 #bindsym $mod+Shift+comma
 
-#bindsym $mod+period
+#bindsym $mod+period			
 #bindsym $mod+Shift+period
 
 #bindsym $mod+slash
