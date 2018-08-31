@@ -72,9 +72,6 @@ exec --no-startup-id devmon
 exec --no-startup-id twmnd
 exec --no-startup-id mpd
 
-exec --no-startup-id nm-applet
-exec --no-startup-id libinput-gestures-setup start
-
 exec_always --no-startup-id ~/.rice/home/polybar/launch.sh
 
 #--------------------------------------------------------------------------------------------------#
@@ -245,7 +242,7 @@ bindsym $mod+t				exec teamspeak3
 #bindsym $mod+u
 bindsym $mod+Shift+u			exec $terminal -e ~/.rice/misc/sys_upgrade.sh
 
-#bindsym $mod+i
+bindsym $mod+i				exec --no-startup-id networkmanager_dmenu -i -show run -dpi 192 -font "DejaVuSans 16"
 #bindsym $mod+Shift+i
 
 #bindsym $mod+o
