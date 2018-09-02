@@ -102,7 +102,7 @@ mode "$mode_system" {
 set $mode_vm (W)in 10, (A)ttach, (S)hutdown, (D)isconnect/(C)onnect 2nd Display, (F)ix Keyboard, (L)ooking Glass
 mode "$mode_vm" {
 	bindsym w exec sudo ~/.rice/profiles/snobo/vm/start.sh, mode "default"
-	bindsym a exec ~/.rice/profiles/snobo//vm/attach.sh, mode "default"
+	bindsym a exec ~/.rice/profiles/snobo/vm/attach.sh, mode "default"
 	bindsym d exec ~/.rice/vm/screen_disconnect.sh, mode "default"
 	bindsym s exec ~/.rice/vm/shutdown.sh, mode "default"
 	bindsym f exec ~/.rice/vm/setkb.sh, mode "default"
