@@ -7,6 +7,7 @@ alias v='vim'
 alias valiases='vim ~/.rice/home/zsh/aliases'
 alias sv='sudo vim'
 alias visudo='sudo EDITOR=vim visudo'
+alias sudo='sudo '
 
 alias p='pacman'
 alias pFl='pacman -Fl'
