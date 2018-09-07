@@ -4,6 +4,7 @@ cd ~/.local/share/qutebrowser/userscripts
 git pull origin master
 git reset --hard
 git clean -dfxn
+chmod +x *
 cd ~/.config/qutebrowser
 git pull origin master
 git reset --hard
