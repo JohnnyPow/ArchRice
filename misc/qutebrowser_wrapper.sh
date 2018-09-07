@@ -3,12 +3,12 @@
 cd ~/.local/share/qutebrowser/userscripts
 git pull origin master
 git reset --hard
-git clean -dfxn
+git clean -dfx
 chmod +x *
 cd ~/.config/qutebrowser
 git pull origin master
 git reset --hard
-git clean -dfxn
+git clean -dfx
 case $1 in
   private)
     qutebrowser ":open -p" --nowindow
