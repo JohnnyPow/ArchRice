@@ -9,6 +9,7 @@ cd ~/.config/qutebrowser
 git pull origin master
 git reset --hard
 git clean -dfx
+cd
 case $1 in
   private)
     qutebrowser ":open -p" --nowindow
