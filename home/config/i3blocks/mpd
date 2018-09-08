@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [[ $(mpc | wc -l) -eq 1 ]]; then
+  exit
+fi
+
 SONG=$(mpc | head -n 1)
 TIME=$(mpc | head -n 2 | tail -n 1 | awk '{ print $3 }')
 
