@@ -3,6 +3,12 @@ separator=false
 separator_block_width=15
 markup=none
 
+[mpd]
+command=$HOME/.config/i3blocks/mpd
+align=center
+min_width=1920
+interval=1
+
 [volume]
 command=$HOME/.config/i3blocks/volume
 interval=once

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+SONG=$(mpc | head -n 1)
+TIME=$(mpc | head -n 2 | tail -n 1 | awk '{ print $3 }')
+
+echo "$SONG $TIME"
