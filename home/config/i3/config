@@ -80,7 +80,8 @@ exec --no-startup-id twmnd
 exec --no-startup-id mpd
 exec --no-startup-id setxkbmap eu -option caps:escape
 exec --no-startup-id xset r rate 300 60
-exec --no-startup-id feh --bg-fill ~/.config/wall.png
+
+exec_always --no-startup-id feh --bg-fill ~/.config/wall.png
 
 #--------------------------------------------------------------------------------------------------#
 #--------------------MODES-------------------------------------------------------------------------#
