@@ -33,4 +33,4 @@ deploy_directory config/ranger .config/ranger
 deploy_directory config/rofi .config/rofi
 deploy_directory config/twmn .config/twmn
 deploy_directory config/zathura .config/zathura
-
+deploy_directory config/i3blocks .config/i3blocks

@@ -1,0 +1,40 @@
+command=/usr/lib/i3blocks/$BLOCK_NAME
+separator=false
+separator_block_width=15
+markup=none
+
+[volume]
+command=$HOME/.config/i3blocks/volume
+interval=once
+signal=10
+
+[df root]
+label=/: 
+command=df /root | tail -n 1 | awk '{ print $5 }'
+interval=60
+
+[df home]
+label=~: 
+command=df /home | tail -n 1 | awk '{ print $5 }'
+interval=60
+
+[wifi]
+instance=wlp2s0
+command=$HOME/.config/i3blocks/wifi
+interval=10
+
+[battery state]
+command=acpi | cut -d ' ' -f 3 | sed s/Full,/./
+interval=1
+
+[battery]
+command=acpi | cut -d ' ' -f 4
+interval=1
+
+[keyboard]
+command=setxkbmap -query | grep layout | awk '{ print $2 }'
+interval=10
+
+[time]
+command=echo $(date '+%Y-%m-%d %I:%M %p')
+interval=1

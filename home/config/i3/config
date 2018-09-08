@@ -54,6 +54,13 @@ gaps inner 8
 
 for_window [class=".*"] border normal 0 title_format " %class"
 
+bar {
+  font pango:Material Design Icons 11
+  status_command i3blocks
+  position top
+  strip_workspace_numbers yes
+}
+
 #floating windows
 for_window [class="Enpass-Desktop"] floating enable
 for_window [class="Impactor"] floating enable
@@ -71,8 +78,9 @@ exec --no-startup-id unclutter --timeout 2
 exec --no-startup-id devmon
 exec --no-startup-id twmnd
 exec --no-startup-id mpd
-
-exec_always --no-startup-id ~/.rice/home/polybar/launch.sh
+exec --no-startup-id setxkbmap eu -option caps:escape
+exec --no-startup-id xset r rate 300 60
+exec --no-startup-id feh --bg-fill ~/.config/wall.png
 
 #--------------------------------------------------------------------------------------------------#
 #--------------------MODES-------------------------------------------------------------------------#
@@ -160,9 +168,12 @@ bindsym $mod+l				focus right
 bindsym $mod+Shift+l			move right 100
 
 #--------------------MEDIA-KEYS--------------------------------------------------------------------#
-bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle
-bindsym XF86AudioLowerVolume		exec --no-startup-id amixer -M set Master 10%- unmute
-bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer -M set Master 10%+ unmute
+bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
+
+bindsym XF86AudioLowerVolume		exec --no-startup-id amixer set Master 10%- unmute; exec pkill -RTMIN+10 i3blocks
+
+bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer set Master 10%+ unmute; exec pkill -RTMIN+10 i3blocks
+
 bindsym XF86AudioPrev			exec --no-startup-id mpc prev
 bindcode 172				exec --no-startup-id mpc toggle
 bindsym XF86AudioNext			exec --no-startup-id mpc next

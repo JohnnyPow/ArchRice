@@ -1,0 +1,30 @@
+#!/bin/sh
+
+STATE=$(acpi | cut -d ' ' -f 3-4 | sed s/Full,//)
+PERCENTAGE=$(acpi | awk '{ print $4 }' | egrep -o '\w+')
+LABEL="" 
+
+echo $STATE
+if [[ $STATE -eq "Full" ]]; then
+  echo ""
+elif [[ $VOL -gt 85 ]]; then
+  echo "$LABEL 90"
+elif [[ $VOL -gt 75 ]]; then
+  echo "$LABEL 80"
+elif [[ $VOL -gt 65 ]]; then
+  echo "$LABEL 70"
+elif [[ $VOL -gt 55 ]]; then
+  echo "$LABEL 60"
+elif [[ $VOL -gt 45 ]]; then
+  echo "$LABEL 50"
+elif [[ $VOL -gt 35 ]]; then
+  echo "$LABEL 40"
+elif [[ $VOL -gt 25 ]]; then
+  echo "$LABEL 30"
+elif [[ $VOL -gt 15 ]]; then
+  echo "$LABEL 20"
+elif [[ $VOL -gt 5 ]]; then
+  echo "$LABEL 10"
+else
+  echo "$LABEL 0"
+fi
