@@ -21,6 +21,7 @@ deploy_file vim/vimrc .vimrc
 deploy_file imwheelrc .imwheelrc
 deploy_file bashrc .bashrc
 deploy_file Xdefaults .Xdefaults
+deploy_file xinitrc .xinitrc
 deploy_file xprofile .xprofile
 deploy_file Xresources .Xresources
 deploy_file config/mpd/mpd.conf .config/mpd/mpd.conf
