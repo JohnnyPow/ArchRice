@@ -78,6 +78,7 @@ exec --no-startup-id unclutter --timeout 2
 exec --no-startup-id devmon
 exec --no-startup-id twmnd
 exec --no-startup-id mpd
+exec --no-startup-id keepassxc
 exec --no-startup-id setxkbmap eu -option caps:escape
 exec --no-startup-id xset r rate 300 60
 
