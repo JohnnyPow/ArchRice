@@ -53,7 +53,7 @@ gaps outer 2
 gaps inner 8
 
 bar {
-  font pango:Material Design Icons 11
+  font pango:mono 11
   status_command i3blocks
   position top
   strip_workspace_numbers yes
