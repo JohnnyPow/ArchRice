@@ -7,7 +7,7 @@ markup=none
 command=$HOME/.config/i3blocks/mpd
 align=center
 min_width=1920
-interval=1
+interval=5
 
 [volume]
 command=$HOME/.config/i3blocks/volume
@@ -15,13 +15,11 @@ interval=once
 signal=10
 
 [df root]
-label=/: 
-command=df /root | tail -n 1 | awk '{ print $5 }'
+command=echo "/:$(df /root | tail -n 1 | awk '{ print $5 }')"
 interval=60
 
 [df home]
-label=~: 
-command=df /home | tail -n 1 | awk '{ print $5 }'
+command=echo "~:$(df /home | tail -n 1 | awk '{ print $5 }')"
 interval=60
 
 [wifi]
@@ -31,16 +29,16 @@ interval=10
 
 [battery state]
 command=acpi | cut -d ' ' -f 3 | sed s/Full,/./
-interval=1
+interval=5
 
 [battery]
 command=acpi | cut -d ' ' -f 4
-interval=1
+interval=5
 
 [keyboard]
 command=setxkbmap -query | grep layout | awk '{ print $2 }'
-interval=10
+interval=60
 
 [time]
-command=echo $(date '+%Y-%m-%d %I:%M %p')
-interval=1
+command=date '+%Y-%m-%d %I:%M %p'
+interval=5
