@@ -26,6 +26,7 @@ deploy_file Xresources .Xresources
 deploy_file config/mpd/mpd.conf .config/mpd/mpd.conf
 deploy_file config/compton.conf .config/compton.conf
 deploy_file config/i3/config .config/i3/config
+deploy_file config/fontconfig/fonts.conf .config/fontconfig/fonts.conf
 
 deploy_directory ncmpcpp .ncmpcpp
 deploy_directory vim/colors .vim/colors

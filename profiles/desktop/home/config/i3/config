@@ -53,7 +53,7 @@ gaps outer 2
 gaps inner 8
 
 bar {
-  font pango:Material Design Icons 11
+  font pango:mono 11
   status_command i3blocks
   position top
   strip_workspace_numbers yes
@@ -187,9 +187,9 @@ bindsym $mod+l				focus right
 bindsym $mod+Shift+l			move right 100
 
 #--------------------MEDIA-KEYS--------------------------------------------------------------------#
-bindsym XF86AudioMute                   exec --no-startup-id pactl set-sink-mute 0 toggle
-bindsym XF86AudioLowerVolume            exec --no-startup-id pactl set-sink-volume 0 -10%
-bindsym XF86AudioRaiseVolume            exec --no-startup-id pactl set-sink-volume 0 +10%
+bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume		exec --no-startup-id amixer set Master 10%- unmute; exec pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer set Master 10%+ unmute; exec pkill -RTMIN+10 i3blocks
 bindsym XF86AudioPrev			exec --no-startup-id mpc prev
 bindcode 172				exec --no-startup-id mpc toggle
 bindsym XF86AudioNext			exec --no-startup-id mpc next
