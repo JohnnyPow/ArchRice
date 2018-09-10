@@ -27,12 +27,8 @@ instance=wlp2s0
 command=$HOME/.config/i3blocks/wifi
 interval=10
 
-[battery state]
-command=acpi | cut -d ' ' -f 3 | sed s/Full,/./
-interval=5
-
 [battery]
-command=acpi | cut -d ' ' -f 4
+command=$HOME/.config/i3blocks/battery
 interval=5
 
 [keyboard]
