@@ -257,8 +257,8 @@ bindsym $mod+i				exec --no-startup-id networkmanager_dmenu -i -show run -dpi 19
 #bindsym $mod+o
 #bindsym $mod+Shift+o
 
-#bindsym $mod+p
-bindsym $mod+Shift+p			exec --no-startup-id passmenu -i -show run -dpi 192 -font "DejaVuSans 16"
+bindsym $mod+p				exec --no-startup-id keepassxc
+#bindsym $mod+Shift+p
 
 
 #bindsym $mod+a
@@ -329,7 +329,7 @@ bindsym $mod+Shift+grave		split h
 #bindsym $mod+comma
 #bindsym $mod+Shift+comma
 
-#bindsym $mod+period			
+#bindsym $mod+period			RESERVED FOR KEEPASS AUTO-TYPING!!
 #bindsym $mod+Shift+period
 
 #bindsym $mod+slash

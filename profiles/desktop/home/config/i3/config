@@ -270,9 +270,8 @@ bindsym $mod+Shift+u			exec $terminal -e ~/.rice/misc/sys_upgrade.sh
 #bindsym $mod+o
 #bindsym $mod+Shift+o
 
-#bindsym $mod+p
-bindsym $mod+Shift+p			exec enpass
-
+bindsym $mod+p				exec --no-startup-id keepassxc
+#bindsym $mod+Shift+p
 
 #bindsym $mod+a
 #bindsym $mod+Shift+a
@@ -342,7 +341,7 @@ bindsym $mod+Shift+grave		split h
 #bindsym $mod+comma
 #bindsym $mod+Shift+comma
 
-#bindsym $mod+period
+#bindsym $mod+period			RESERVED FOR KEEPASS AUTO-TYPING!!
 #bindsym $mod+Shift+period
 
 #bindsym $mod+slash
