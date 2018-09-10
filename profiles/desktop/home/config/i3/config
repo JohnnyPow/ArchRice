@@ -302,8 +302,8 @@ bindsym $mod+c				exec $terminal -e vim ~/.config/i3/config
 #bindsym $mod+v
 bindsym $mod+Shift+v			mode "$mode_vm"
 
-bindsym $mod+b				exec ~/.rice/misc/qutebrowser_wrapper.sh
-bindsym $mod+Shift+b			exec ~/.rice/misc/qutebrowser_wrapper.sh private
+bindsym $mod+b				exec qutebrowser
+bindsym $mod+Shift+b			exec qutebrowser ":open -p" --nowindow
 
 bindsym $mod+n				exec devmon -c
 bindsym $mod+Shift+n			exec devmon -r
