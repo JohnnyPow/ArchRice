@@ -52,6 +52,13 @@ client.urgent           $border-color $bg-color $urgent-text-color   $urgent-bg-
 gaps outer 2
 gaps inner 8
 
+bar {
+  font pango:Material Design Icons 11
+  status_command i3blocks
+  position top
+  strip_workspace_numbers yes
+}
+
 for_window [class=".*"] border normal 0 title_format " %class"
 
 #floating windows
@@ -77,7 +84,7 @@ exec --no-startup-id sudo ~/.rice/vm/if.sh
 
 exec --no-startup-id imwheel
 
-exec_always --no-startup-id ~/.rice/profiles/desktop/home/polybar/launch.sh
+exec_always --no-startup-id feh --bg-fill ~/.config/wall.png
 exec_always --no-startup-id ~/.rice/vm/setkb.sh
 
 #--------------------------------------------------------------------------------------------------#

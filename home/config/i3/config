@@ -52,14 +52,14 @@ client.urgent           $border-color $bg-color $urgent-text-color   $urgent-bg-
 gaps outer 2
 gaps inner 8
 
-for_window [class=".*"] border normal 0 title_format " %class"
-
 bar {
   font pango:Material Design Icons 11
   status_command i3blocks
   position top
   strip_workspace_numbers yes
 }
+
+for_window [class=".*"] border normal 0 title_format " %class"
 
 #floating windows
 for_window [class="Enpass-Desktop"] floating enable
