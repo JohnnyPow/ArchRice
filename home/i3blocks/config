@@ -5,13 +5,11 @@ markup=none
 
 [mpd]
 command=$HOME/.rice/home/i3blocks/mpd
-align=center
-min_width=1920
-interval=5
+interval=1
 
 [pacman]
 command=$HOME/.rice/home/i3blocks/pacman
-interval=60
+interval=3600
 
 [volume]
 command=$HOME/.rice/home/i3blocks/volume
@@ -20,11 +18,11 @@ signal=10
 
 [df root]
 command=echo "/:$(df /root | tail -n 1 | awk '{ print $5 }')"
-interval=60
+interval=30
 
 [df home]
 command=echo "~:$(df /home | tail -n 1 | awk '{ print $5 }')"
-interval=60
+interval=30
 
 [wifi]
 instance=wlp2s0
@@ -37,7 +35,7 @@ interval=5
 
 [keyboard]
 command=setxkbmap -query | grep layout | awk '{ print $2 }'
-interval=60
+interval=10
 
 [time]
 command=$HOME/.rice/home/i3blocks/date
