@@ -4,13 +4,13 @@ separator_block_width=15
 markup=none
 
 [mpd]
-command=$HOME/.config/i3blocks/mpd
+command=$HOME/.rice/home/i3blocks/mpd
 align=center
 min_width=1920
 interval=5
 
 [volume]
-command=$HOME/.config/i3blocks/volume
+command=$HOME/.rice/home/i3blocks/volume
 interval=once
 signal=10
 
@@ -24,11 +24,11 @@ interval=60
 
 [wifi]
 instance=wlp2s0
-command=$HOME/.config/i3blocks/wifi
+command=$HOME/.rice/home/i3blocks/wifi
 interval=10
 
 [battery]
-command=$HOME/.config/i3blocks/battery
+command=$HOME/.rice/home/i3blocks/battery
 interval=5
 
 [keyboard]

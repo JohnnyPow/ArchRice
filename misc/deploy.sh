@@ -18,6 +18,7 @@ ln -sfT ~/.rice/home/$1 ~/$2
 
 deploy_file zsh/zshrc .zshrc
 deploy_file vim/vimrc .vimrc
+deploy_file i3blocks/config .config/i3blocks/config
 deploy_file imwheelrc .imwheelrc
 deploy_file bashrc .bashrc
 deploy_file Xdefaults .Xdefaults
@@ -36,4 +37,3 @@ deploy_directory config/ranger .config/ranger
 deploy_directory config/rofi .config/rofi
 deploy_directory config/twmn .config/twmn
 deploy_directory config/zathura .config/zathura
-deploy_directory config/i3blocks .config/i3blocks
