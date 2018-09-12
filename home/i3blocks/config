@@ -11,7 +11,7 @@ interval=5
 
 [pacman]
 command=$HOME/.rice/home/i3blocks/pacman
-interval=3600
+interval=60
 
 [volume]
 command=$HOME/.rice/home/i3blocks/volume
