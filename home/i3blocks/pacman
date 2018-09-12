@@ -1,0 +1,18 @@
+#!/bin/bash
+ 
+sudo pacman -Sy
+PACKAGES=$(pacman -Sup | wc -l)
+
+if [[ $PACKAGES = 0 ]]; then
+  echo "everything up-to-date"
+else
+  echo "$PACKAGES updates available"
+fi
+
+if [[ $BLOCK_BUTTON = 1 ]]; then
+  sudo pacman -Sy
+fi
+
+if [[ $BLOCK_BUTTON = 3 ]]; then
+  /usr/local/bin/st -e ~/.rice/misc/sys_upgrade.sh
+fi

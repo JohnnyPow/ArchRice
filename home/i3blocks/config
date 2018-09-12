@@ -9,6 +9,10 @@ align=center
 min_width=1920
 interval=5
 
+[pacman]
+command=$HOME/.rice/home/i3blocks/pacman
+interval=3600
+
 [volume]
 command=$HOME/.rice/home/i3blocks/volume
 interval=once
@@ -36,5 +40,5 @@ command=setxkbmap -query | grep layout | awk '{ print $2 }'
 interval=60
 
 [time]
-command=date '+%Y-%m-%d %I:%M %p'
+command=$HOME/.rice/home/i3blocks/date
 interval=5

@@ -33,12 +33,16 @@ SSID=$(nmcli c | grep $INTERFACE | awk '{ print $1 }')
 #------------------------------------------------------------------------
 
 if [[ $QUALITY -ge 80 ]]; then
-    echo "蠟 $SSID"
+    echo "蠟:$SSID"
 elif [[ $QUALITY -gt 60 ]]; then
-    echo "襤 $SSID"
+    echo "襤:$SSID"
 elif [[ $QUALITY -gt 40 ]]; then
-    echo "嵐 $SSID"
+    echo "嵐:$SSID"
 else
-    echo "爛 $SSID"
+    echo "爛:$SSID"
+fi
+
+if [[ $BLOCK_BUTTON = 3 ]]; then
+  i3-msg exec nm-connection-editor
 fi
 
