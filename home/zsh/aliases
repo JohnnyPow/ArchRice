@@ -1,16 +1,11 @@
 # vim:ft=sh
 
-alias ls='ls --color=auto'
-alias la='ls -alh'
-
-alias cdr='cd ~/.rice'
 alias cdc='cd ~/.config'
+alias cdr='cd ~/.rice'
+alias cds='cd ~/.sync'
 
-alias v='vim'
-alias valiases='vim ~/.rice/home/zsh/aliases'
-alias sv='sudo vim'
-alias visudo='sudo EDITOR=vim visudo'
-alias sudo='sudo '
+alias la='ls -alh'
+alias ls='ls --color=auto'
 
 alias p='pacman'
 alias pFl='pacman -Fl'
@@ -23,15 +18,23 @@ alias pSs='pacman -Ss'
 alias pSy='sudo pacman -Sy --needed'
 alias pSyu='sudo pacman -Syu'
 
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-
-alias tw='function _fun(){ nohup streamlink --player mpv twitch.tv/$1 best > /dev/null };_fun'
-alias yt='function _fun(){ youtube-viewer --video-player mpv $1 };_fun'
-alias twdl='function _fun(){ output=$(youtube-dl --get-filename -o "%(uploader)s_%(title)s_$(($(date +%s%N)/10000000)).%(ext)s" $1); streamlink -o $output $1 best };_fun'
-
 alias rgp='~/.rice/misc/git_push.sh'
 alias rsu='~/.rice/misc/submodule_upgrade.sh'
 
-alias tvh='nohup vlc ~/.local/channels > /dev/null &'
 alias snap='qemu-img snapshot'
+alias sudo='sudo '
+alias sv='sudo vim'
+
 alias todo='vim ~/Documents/todo'
+alias tvh='nohup vlc ~/.local/channels > /dev/null &'
+alias tw='function _fun(){ nohup streamlink --player mpv twitch.tv/$1 best > /dev/null };_fun'
+alias twdl='function _fun(){ output=$(youtube-dl --get-filename -o "%(uploader)s_%(title)s_$(($(date +%s%N)/10000000)).%(ext)s" $1); streamlink -o $output $1 best };_fun'
+
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
+alias v='vim'
+alias valiases='vim ~/.rice/home/zsh/aliases'
+alias visudo='sudo EDITOR=vim visudo'
+
+alias yt='function _fun(){ youtube-viewer --video-player mpv $1 };_fun'
+
