@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [[ -z $(acpi) ]]; then
+  exit
+fi
+
 STATE=$(acpi | cut -d ' ' -f 3 | egrep -o '\w+')
 PERCENTAGE=$(acpi | cut -d ' ' -f 4 | egrep -o '\w+')
 TEXT=":$PERCENTAGE%"
