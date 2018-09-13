@@ -307,7 +307,7 @@ bindsym $mod+Shift+b			exec qutebrowser ":open -p" --nowindow
 bindsym $mod+n				exec devmon -c
 bindsym $mod+Shift+n			exec devmon -r
 
-bindsym $mod+m				exec neomutt
+bindsym $mod+m				exec $terminal -e neomutt
 #bindsym $mod+Shift+m
 
 #--------------------SYMBOL-KEYS-------------------------------------------------------------------#
