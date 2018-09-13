@@ -71,7 +71,6 @@ for_window [class="looking-glass-client"] move container to workspace $workspace
 #--------------------------------------------------------------------------------------------------#
 #--------------------AUTOSTART---------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------#
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id compton
 exec --no-startup-id unclutter --timeout 2
@@ -308,7 +307,7 @@ bindsym $mod+Shift+b			exec qutebrowser ":open -p" --nowindow
 bindsym $mod+n				exec devmon -c
 bindsym $mod+Shift+n			exec devmon -r
 
-bindsym $mod+m				exec thunderbird
+bindsym $mod+m				exec neomutt
 #bindsym $mod+Shift+m
 
 #--------------------SYMBOL-KEYS-------------------------------------------------------------------#
