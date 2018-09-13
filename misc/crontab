@@ -1,0 +1,2 @@
+*/15 * * * * offlineimap; pkill -RTMIN+11 i3blocks
+@hourly sudo pacman -Sy; pkill -RTMIN+12 i3blocks
