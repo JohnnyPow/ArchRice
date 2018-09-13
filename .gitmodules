@@ -8,3 +8,6 @@
 [submodule "home/zsh/oh-my-zsh"]
 	path = home/zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "home/config/mutt"]
+	path = home/config/mutt
+	url = https://github.com/LukeSmithxyz/mutt-wizard.git
