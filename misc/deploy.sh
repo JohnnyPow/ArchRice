@@ -21,6 +21,7 @@ deploy_file vim/vimrc .vimrc
 deploy_file i3blocks/config .config/i3blocks/config
 deploy_file imwheelrc .imwheelrc
 deploy_file bashrc .bashrc
+deploy_file urlview .urlview
 deploy_file Xdefaults .Xdefaults
 deploy_file xinitrc .xinitrc
 deploy_file xprofile .xprofile
