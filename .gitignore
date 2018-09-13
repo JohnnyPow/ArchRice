@@ -1,2 +1,5 @@
 backups/
 home/config/ranger/**/__*
+home/config/mutt/accounts/
+home/config/mutt/credentials/
+home/config/mutt/personal.muttrc
