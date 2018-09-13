@@ -2,6 +2,7 @@
 
 function upgrade {
   yay -Syu --devel --needed --sudoloop --answerupgrade " " --answerclean All --answeredit None --answerdiff None
+  pkill -RTMIN+12 i3blocks
 }
 
 news=$(yay -Pw)

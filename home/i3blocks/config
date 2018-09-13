@@ -9,11 +9,13 @@ interval=1
 
 [pacman]
 command=$HOME/.rice/home/i3blocks/pacman
-interval=60
+interval=once
+signal=12
 
 [mail]
 command=$HOME/.rice/home/i3blocks/mail
-interval=60
+interval=once
+signal=11
 
 [volume]
 command=$HOME/.rice/home/i3blocks/volume

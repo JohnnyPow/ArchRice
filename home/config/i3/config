@@ -71,7 +71,7 @@ for_window [class="jetbrains-toolbox"] floating enable
 #--------------------------------------------------------------------------------------------------#
 #--------------------AUTOSTART---------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------#
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id compton
 exec --no-startup-id unclutter --timeout 2
