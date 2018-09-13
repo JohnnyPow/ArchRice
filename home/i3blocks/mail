@@ -1,0 +1,14 @@
+#!/bin/sh
+
+NEW=$(ls -1 ~/.mail/*/INBOX/new | wc -l)
+
+if [[ $NEW != 0 ]]; then
+  echo ":$NEW"
+else
+  echo 
+fi
+
+if [[ $BLOCK_BUTTON = 1 ]]; then
+  i3-msg exec "/usr/local/bin/st -e neomutt" > /dev/null
+fi
+

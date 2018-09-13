@@ -1,6 +1,5 @@
 #!/bin/bash
  
-sudo pacman -Sy > /dev/null
 PACKAGES=$(pacman -Sup | wc -l)
 
 if [[ $PACKAGES != 0 ]]; then
