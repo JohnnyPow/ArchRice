@@ -1,3 +1,4 @@
-*/15 * * * * offlineimap; pkill -RTMIN+11 i3blocks
+*/5 * * * * offlineimap -q -f INBOX; pkill -RTMIN+11 i3blocks
+0 */4 * * * offlineimap; pkill -RTMIN+11 i3blocks
 */5 * * * * ~/.sync/sync.sh
 @hourly sudo pacman -Sy; pkill -RTMIN+12 i3blocks
