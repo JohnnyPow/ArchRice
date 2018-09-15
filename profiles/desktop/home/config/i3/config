@@ -80,6 +80,7 @@ exec --no-startup-id numlockx
 exec --no-startup-id mpd
 exec --no-startup-id keepassxc
 exec --no-startup-id sudo ~/.rice/vm/if.sh
+exec --no-startup-id i3lock -c 181818
 
 exec --no-startup-id imwheel
 
