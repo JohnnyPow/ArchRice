@@ -33,7 +33,7 @@ interval=30
 [wifi]
 instance=wlp2s0
 command=$HOME/.rice/home/i3blocks/wifi
-interval=10
+interval=5
 
 [battery]
 command=$HOME/.rice/home/i3blocks/battery
@@ -41,7 +41,7 @@ interval=5
 
 [keyboard]
 command=setxkbmap -query | grep layout | awk '{ print $2 }'
-interval=10
+interval=5
 
 [time]
 command=$HOME/.rice/home/i3blocks/date
