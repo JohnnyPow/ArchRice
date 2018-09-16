@@ -81,7 +81,6 @@ exec --no-startup-id mpd
 exec --no-startup-id keepassxc
 exec --no-startup-id setxkbmap eu -option caps:escape
 exec --no-startup-id xset r rate 300 60
-exec --no-startup-id i3lock -c 181818 --radius 180 --verifsize 56 --wrongsize 56 --ring-width 12
 
 exec_always --no-startup-id feh --bg-fill ~/.config/wall.png
 
