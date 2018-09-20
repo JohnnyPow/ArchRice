@@ -1,8 +1,12 @@
 #!/bin/bash
 
+notify () {
+  echo "$1"
+  twmnc -t "Win10-VM" -c "$1"
+}
+
 if [[ $(netstat -tln | grep 127.0.0.1:1234) ]]; then
-  twmnc -t "Win10-VM" -c "already running"
-  echo "VM already running"
+  notify "already running"
   exit
 fi
 
@@ -23,7 +27,9 @@ cp .config/pulse/cookie /root/.config/pulse/cookie
 
 IFACE=tap0
 
-twmnc -t "Win10-VM" -c "starting"
+notify "starting"
+
+echo 'performance' | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /dev/null
 
 taskset -c 2-11 qemu-system-x86_64 \
         -nodefaults \
@@ -71,7 +77,6 @@ taskset -c 2-11 qemu-system-x86_64 \
 	\
         -monitor tcp:127.0.0.1:1234,server,nowait
 
-# sudo ip link set dev $IFACE down &> /dev/null
-# sudo ip tuntap del $IFACE mode tap &> /dev/null
+echo 'powersave' | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /dev/null
 
-twmnc -t "Win10-VM" -c "shut down"
+notify "shut down"
