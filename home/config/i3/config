@@ -5,6 +5,7 @@ set $terminal st
 font pango:DejaVu Sans 12
 
 floating_modifier $mod
+focus_follows_mouse no
 
 #screen identifiers
 set $screen1 "eDP1"
@@ -171,8 +172,8 @@ bindsym $mod+Shift+l			move right 100
 
 #--------------------MEDIA-KEYS--------------------------------------------------------------------#
 bindsym XF86AudioMute			exec --no-startup-id amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume		exec --no-startup-id amixer set Master -M 10%- unmute; exec pkill -RTMIN+10 i3blocks
-bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer set Master -M 10%+ unmute; exec pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume		exec --no-startup-id amixer set Master -M 5%- unmute; exec pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer set Master -M 5%+ unmute; exec pkill -RTMIN+10 i3blocks
 bindsym XF86AudioPrev			exec --no-startup-id mpc prev
 bindcode 172				exec --no-startup-id mpc toggle
 bindsym XF86AudioNext			exec --no-startup-id mpc next
