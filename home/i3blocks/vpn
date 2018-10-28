@@ -1,0 +1,21 @@
+#!/bin/bash
+
+VPN=$(expressvpn status | head -n 1 | sed 's/^[^m]*m//g')
+STATE=$(echo $VPN | cut -d ' ' -f 1)
+LOCATION=$(echo $VPN | cut -d ' ' -f 3-)
+
+case $STATE in
+"Not")
+  exit
+  ;;
+"Connecting")
+  echo "- connecting to VPN.."
+  ;;
+"Connected")
+  echo "via $LOCATION"
+  ;;
+*)
+  echo "VPN-Error"
+  ;;
+esac
+

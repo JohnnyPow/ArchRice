@@ -24,16 +24,21 @@ signal=10
 
 [df root]
 command=echo "/:$(df /root | tail -n 1 | awk '{ print $5 }')"
-interval=30
+interval=10
 
 [df home]
 command=echo "~:$(df /home | tail -n 1 | awk '{ print $5 }')"
-interval=30
+interval=10
 
 [wifi]
 instance=wlp2s0
 command=$HOME/.rice/home/i3blocks/wifi
-interval=5
+interval=1
+
+[vpn]
+command=$HOME/.rice/home/i3blocks/vpn
+interval=1
+
 
 [battery]
 command=$HOME/.rice/home/i3blocks/battery
@@ -45,4 +50,4 @@ interval=5
 
 [time]
 command=$HOME/.rice/home/i3blocks/date
-interval=5
+interval=1
