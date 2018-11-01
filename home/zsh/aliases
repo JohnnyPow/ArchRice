@@ -1,5 +1,6 @@
 # vim:ft=sh
 
+alias cd='function _fun(){ cd "$@" && ls };_fun'
 alias cdc='cd ~/.config'
 alias cdr='cd ~/.rice'
 alias cds='cd ~/.sync'
