@@ -36,6 +36,7 @@ command=$HOME/.rice/home/i3blocks/wifi
 interval=1
 
 [vpn]
+instance=wlp2s0
 command=$HOME/.rice/home/i3blocks/vpn
 interval=1
 

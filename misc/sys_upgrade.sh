@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function upgrade {
-  yay -Syu --devel --needed --sudoloop --answerupgrade " " --answerclean All --answeredit None --answerdiff None
+  yay -Syu --devel --needed --sudoloop --answerupgrade " " --answerclean All --answeredit None --answerdiff None --cleanafter
   pkill -RTMIN+12 i3blocks
 }
 
