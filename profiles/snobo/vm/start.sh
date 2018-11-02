@@ -53,7 +53,8 @@ taskset -c 1-3,5-7 qemu-system-x86_64 \
         -device virtio-blk-pci,scsi=off,drive=disk0,id=virtio-disk0,bootindex=1,iothread=iothread0 \
 	\
 	-drive file="$virtio_iso",media=cdrom \
-	-soundhw ac97 \
+	-device ich9-intel-hda \
+	-device hda-duplex \
 	\
 	-net nic,model=virtio,macaddr=$macaddr \
 	-net tap,ifname=tap0,script=no,downscript=no \
