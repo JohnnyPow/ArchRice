@@ -3,17 +3,24 @@
 date=$(date +%F_%H%M%S)
 mkdir -p ~/.rice/backups/$date && cd "$_"
 
+remove_file() {
+  if [[ -f ~/$1 ]]; then
+    mkdir -p ./$(dirname $1) && cp ~/$1 $1
+    rm ~/$1
+  fi
+}
+
 deploy_file() {
-mkdir -p ./$(dirname $1) && cp ~/$2 $1
-mkdir -p ~/$(dirname $2)
-ln -sf ~/.rice/home/$1 ~/$2
+  mkdir -p ./$(dirname $1) && cp ~/$2 $1
+  mkdir -p ~/$(dirname $2)
+  ln -sf ~/.rice/home/$1 ~/$2
 }
 
 deploy_directory() {
-cp -rL ~/$2 ./$1
-mkdir -p ./$(dirname $1) && cp ~/$2 $1
-rm -rf ~/$2
-ln -sfT ~/.rice/home/$1 ~/$2
+  cp -rL ~/$2 ./$1
+  mkdir -p ./$(dirname $1) && cp -r ~/$2 $1
+  rm -rf ~/$2
+  ln -sfT ~/.rice/home/$1 ~/$2
 }
 
 deploy_file zsh/zshrc .zshrc
@@ -28,7 +35,6 @@ deploy_file xprofile .xprofile
 deploy_file Xresources .Xresources
 deploy_file zprofile .zprofile
 deploy_file config/mpd/mpd.conf .config/mpd/mpd.conf
-deploy_file config/compton.conf .config/compton.conf
 deploy_file config/i3/config .config/i3/config
 deploy_file config/fontconfig/fonts.conf .config/fontconfig/fonts.conf
 
@@ -42,3 +48,6 @@ deploy_directory config/mutt .config/mutt
 
 crontab -r
 cat ~/.rice/misc/crontab | crontab
+
+remove_file .config/compton.conf
+
