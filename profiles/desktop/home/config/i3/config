@@ -207,7 +207,7 @@ bindsym XF86AudioNext			exec --no-startup-id mpc next
 bindsym $mod+Return			exec $terminal
 #bindsym $mod+Shift+Return
 
-#bindsym $mod+space
+bindsym $mod+space			floating toggle
 #bindsym $mod+Shift+space
 
 #bindsym $mod+Menu

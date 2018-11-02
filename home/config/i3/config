@@ -195,7 +195,7 @@ bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -set 100
 bindsym $mod+Return			exec $terminal
 #bindsym $mod+Shift+Return
 
-#bindsym $mod+space
+bindsym $mod+space			floating toggle
 #bindsym $mod+Shift+space
 
 #bindsym $mod+Menu
