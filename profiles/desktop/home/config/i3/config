@@ -72,7 +72,7 @@ for_window [class="looking-glass-client"] move container to workspace $workspace
 #--------------------AUTOSTART---------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------#
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id compton -b --config /dev/null
+exec --no-startup-id compton -b --config /dev/null --unredir-if-possible
 exec --no-startup-id unclutter --timeout 2
 exec --no-startup-id devmon
 exec --no-startup-id twmnd
