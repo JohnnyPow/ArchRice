@@ -6,9 +6,5 @@ fi
 
 PACKAGES=$(pacman -Sup | wc -l)
 
-if [[ $PACKAGES = 1 ]]; then
-  echo "$PACKAGES update available"
-elif [[ $PACKAGES > 1 ]]; then
-  echo "$PACKAGES updates available"
-fi
+echo ":$PACKAGES"
 

@@ -3,6 +3,10 @@ separator=false
 separator_block_width=15
 markup=none
 
+[cpu]
+command=$HOME/.rice/home/i3blocks/cpu
+interval=1
+
 [mpd]
 command=$HOME/.rice/home/i3blocks/mpd
 interval=1

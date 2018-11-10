@@ -1,0 +1,8 @@
+#!/bin/bash
+
+limit=$(cpupower frequency-info | grep "current policy" | cut -d ' ' -f 12-13 | rev | sed 's/\.//' | rev)
+policy=$(cpupower frequency-info| grep "may decide" | grep -wo '\".*\"' | sed 's/"//g')
+frequency=$(cpupower frequency-info | grep "current CPU frequency" | tail -n 1 | cut -d ' ' -f 6-7)
+
+echo :$frequency :$limit :$policy
+
