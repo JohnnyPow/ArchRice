@@ -3,6 +3,10 @@ set path+=**
 set wildmenu
 set number
 set background=dark
+set smartindent
+set expandtab
+set shiftwidth=2
+set softtabstop=2
 
 syntax on
 filetype plugin on
