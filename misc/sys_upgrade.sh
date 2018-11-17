@@ -1,7 +1,17 @@
 #!/bin/bash
 
 function upgrade {
-  yay -Syu --devel --needed --sudoloop --answerupgrade " " --answerclean All --answeredit None --answerdiff None --cleanafter
+  yay -Syu \
+  --devel \
+  --needed \
+  --sudoloop \
+  --answerupgrade " " \
+  --answerclean All \
+  --answeredit None \
+  --answerdiff None \
+  --cleanafter \
+  --ignore qemu-patched
+  
   pkill -RTMIN+12 i3blocks
 }
 

@@ -6,8 +6,9 @@ rm -rf qemu-patched
 
 git clone https://aur.archlinux.org/qemu-patched.git
 cd qemu-patched
-cp $HOME/.rice/vm/PKGBUILD .
+patch PKGBUILD < $HOME/.rice/vm/qemu-patched-x86_64.patch
 makepkg -scfC
-sudo pacman -U qemu-patched-x86_64-*
+sudo pacman -U qemu-patched-*
 cd ..
 rm -rf qemu-patched
+
