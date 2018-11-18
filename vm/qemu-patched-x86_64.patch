@@ -1,0 +1,27 @@
+@@ -3,8 +3,7 @@
+ # Contributor: Sébastien "Seblu" Luttringer <seblu@seblu.net>
+ 
+ pkgbase=qemu-patched
+-pkgname=(qemu-patched qemu-patched-headless qemu-patched-arch-extra qemu-patched-headless-arch-extra
+-         qemu-patched-block-{iscsi,rbd,gluster} qemu-patched-guest-agent)
++pkgname=qemu-patched
+ _pkgname=qemu
+ pkgdesc="A generic and open source machine emulator and virtualizer - Patched for extra functionality"
+ pkgver=3.0.0
+@@ -58,16 +57,8 @@
+ 
+ build() {
+   _build full \
++    --target-list="x86_64-softmmu" \
+     --audio-drv-list="pa alsa sdl"
+-
+-  _build headless \
+-    --audio-drv-list= \
+-    --disable-bluez \
+-    --disable-sdl \
+-    --disable-gtk \
+-    --disable-vte \
+-    --disable-opengl \
+-    --disable-virglrenderer
+ }
+ 
