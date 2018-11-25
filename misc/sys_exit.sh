@@ -1,11 +1,11 @@
 #!/bin/bash
 case $1 in
   shutdown)
-    sudo umount -f /mnt/*
+    sudo umount -l /mnt/*
     sudo shutdown -h now
   ;;
   reboot)
-    sudo umount -f /mnt/*
+    sudo umount -l /mnt/*
     sudo reboot
   ;;
   exit)

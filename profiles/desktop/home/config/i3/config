@@ -107,9 +107,9 @@ mode "resize" {
 
 set $mode_system (E)xit, (R)eboot, (S)hutdown, (L)ock
 mode "$mode_system" {
-	bindsym r exec $terminal -e ~/.rice/profiles/desktop/misc/sys_exit.sh reboot, mode "default"
-	bindsym s exec $terminal -e ~/.rice/profiles/desktop/misc/sys_exit.sh shutdown, mode "default"
-	bindsym e exec $terminal -e ~/.rice/profiles/desktop/misc/sys_exit.sh exit, mode "default"
+	bindsym r exec ~/.rice/profiles/desktop/misc/sys_exit.sh reboot, mode "default"
+	bindsym s exec ~/.rice/profiles/desktop/misc/sys_exit.sh shutdown, mode "default"
+	bindsym e exec ~/.rice/profiles/desktop/misc/sys_exit.sh exit, mode "default"
 	bindsym l exec i3lock -c 181818, mode "default"
 
         bindsym Return mode "default"
