@@ -68,7 +68,7 @@ for_window [class="Impactor"] floating enable
 for_window [class="Alsa-tray"] floating enable
 for_window [class="Mainwindow.py"] floating enable
 for_window [class="jetbrains-toolbox"] floating enable
-for_window [class="keepassxc"] floating enable, resize set 1600 1000, move position center
+for_window [class="keepassxc"] floating enable, move position center
 
 #--------------------------------------------------------------------------------------------------#
 #--------------------AUTOSTART---------------------------------------------------------------------#
